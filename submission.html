@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ESSP IV: Data</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="overview.html" id="logo">IV</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="overview.html">Overview</a>
+									<ul>
+										<li><a href="overview.html#purpose">Statement of Purpose</a></li>
+										<li><a href="overview.html#timeline">Timeline</a></li>
+										<li><a href="overview.html#feedback">Feedback Form</a></li>
+									</ul>
+								</li>
+								<li><a href="data.html">Data</a>
+									<ul>
+										<li><a href="data.html#code">Example Code</a></li>
+										<li><a href="data.html#spectra">Spectra</a></li>
+										<li><a href="data.html#ccf">CCFs</a></li>
+										<li><a href="data.html#timeseries">Time Series</a></li>
+									</ul>
+								</li>
+								<li><a href="submission.html">Submission Guidelines</a>
+									<ul>
+										<li><a href="submission.html#team">Team Information</a></li>
+										<li><a href="submission.html#basics">Method Basics</a></li>
+										<li><a href="submission.html#details">Method Details</a></li>
+										<li><a href="submission.html#results">Results</a></li>
+									</ul>
+								</li>
+								<li><a href="acknowledgements.html">Agreements</a>
+									<ul>
+										<li><a href="acknowledgements.html#harps">Instrument Acknowledgements</a></li>
+										<li><a href="acknowledgements.html#harpsn">Collaboration Agreement</a></li>
+									</ul>
+								</li>
+								<li><a href="qna.html">Q & A</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4-side col-12-mobile-side" id="sidebar">
+								<hr class="first" />
+							<hr />
+								<section>
+									<header>
+										<h3><a href="#team">Team Information</a></h3>
+									</header>
+								</section>
+							<hr />
+								<section>
+									<header>
+										<h3><a href="#basics">Method Basics</a></h3>
+									</header>
+								</section>
+                            <hr />
+                                <section>
+                                    <header>
+                                        <h3><a href="#details">Method Details</a></h3>
+                                    </header>
+                                </section>
+                            <hr />
+                                <section>
+                                    <header>
+                                        <h3><a href="#results">RVs of Results</a></h3>
+                                    </header>
+                                </section>
+							<hr />
+							</div>
+							<div class="col-8 col-12-mobile imp-mobile" id="content">
+								<article id="main">
+									<section>
+										<header>
+											<h2>Submission Guidelines</h2>
+										</header>
+										<!--<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>-->
+										<p>
+											This page details the needed information for each participant and implemented method.  Additionally, we describe what data products should be submitted as part of the "results" and how to format these files.
+										</p>
+										<p>
+											The next submission deadline is: 
+										</p>
+										<p>
+											Here is a summary of the requested information and requested file names.
+										</p>
+
+										<table>
+											<tr>
+												<th style='width:20px'></th>
+												<th align="left"><b>Required Info</b></th>
+												<th align="left"><b>File Name</b></th>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td><a href="#team">Team Information</a></td>
+												<td>&lt;&lt;Group Name&gt;&gt;_members.csv</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td><a href="#basics">Method Basics</a></td>
+												<td>&lt;&lt;Group Name&gt;&gt;_methods.csv</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td><a href="#details">Method Details</a></td>
+												<td>&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;.tex/doc/pdf</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td><a href="#results">RVs of Results</a></td>
+												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_results.csv</td>
+											</tr>
+											<tr>
+												<th style='width:20px'></th>
+												<th align="left"><b>As Applicable</b></th>
+												<th align="left"><b>File Name</b></th>
+											</tr>
+											<tr>
+												<td>5a</td>
+												<td><a href="#planet">Best Fit Planet Parameters</a></td>
+												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFit.csv</td>
+											</tr>
+											<tr>
+												<td>5b</td>
+												<td><a href="#planet">Planet Fit Posteriors</a></td>
+												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFitPosteriors.csv</td>
+											</tr>
+											<tr>
+												<td>6a</td>
+												<td><a href="#aux">Hyperparameters</a></td>
+												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparameters.csv</td>
+											</tr>
+											<tr>
+												<td>6b</td>
+												<td><a href="#aux">Hyperparameter Posteriors</a></td>
+												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparametersPosteriors.csv</td>
+											</tr>
+										</table>
+									</section>
+                                <hr />
+									<section id="team">
+										<header>
+											<h3>Team Information</h3>
+										</header>
+										<p>
+											A file with the requested headers and an example row can be found here: <a href="examples/teamName_members.csv" target="blank">teamName_members.csv</a>
+										</p>
+										<p>
+											Each team should provide a CSV file with the name <b>&lt;&lt;Team Name&gt;&gt;_members.csv</b> with the following columns for each group member.  
+										</p>
+										<ul>
+											<li>Name</li>
+											<li>E-Mail</li>
+											<li>ORCID iD</li>
+											<li>Affiliation</li>
+											<li>Affiliation2</li>
+										</ul>
+
+										<p>
+											Additional affiliation columns can be added as needed.  The provided names and affiliations should reflect how participants wish the information to appear in a published report.  Needed acknowledgements will be requested at a later stage.
+										</p>
+                                        
+									</section>
+								<hr />
+									<section id="basics">
+										<header>
+											<h3>Method Basics</h3>
+										</header>
+										<p>
+											A file with the requested headers and an example row can be found here:  <a href="examples/teamName_methods.csv" target="blank">teamName_methods.csv</a>
+										</p>
+										<p>
+											Each group should provide the following basic information in a CSV file with the name <b>&lt;&lt;Team Name&gt;&gt;_methods.csv</b>.  Groups employing multiple methods should submit just one file with a different row for each method.  Any method or method variation yielding distinct results (i.e., worth being analyzed separately) should be given a separate row.
+										</p>
+
+										<p>
+											The requested basic information is as follows:
+											<ul>
+												<li><b>Name</b>: a full, descriptive name for each method, i.e. what would be used to refer to this method in a paper</li>
+												<li><b>Nick Name</b>: a shorter, file-name friendly version (e.g. no spaces, special characters, etc.) to be incorporated into various submitted files</li>
+												<li><b>Contact</b>: the e-mail of who to best contact for questions about this method; likely the person who will be doing the majority of the work implementing the method</li>
+												<li><b>Input</b>: list all data products required by the method</li>
+												<li><b>Recalculated</b>: list any data products that were re-calculated for the method—i.e., any data product for which the provided values were not used</li>
+												<li><b>Run On</b>: the class of device was the method run on—e.g. Laptop, desktop, cluster (and please specify number of nodes, GPUs, etc.), other</li>
+												<li><b>Run Time</b>: the order of magnitude unit it takes the method to finish running when using the device specified in the “Run On” column—e.g. seconds, hours, etc.</li>
+
+											</ul>
+										</p>
+
+										<p>
+											An example of how this data will be compiled can be found in Table 6 of the <a href="https://ui.adsabs.harvard.edu/abs/2022AJ....163..171Z/abstract" target="blank">ESSP II report</a>.
+										</p>
+											
+										
+									</section>
+								<hr />
+									<section id="details">
+										<header>
+											<h3>Method Details</h3>
+										</header>
+										<p>
+											We also request more detailed information on each method to be submited with the final results.  These detailed questions focus on  1) a general description of the method, 2) the data requirements for the method, 3) the process of applying the method, and 4) the results of the method.
+										</p>
+										<p>
+											The questions to be answered are collected in the following file formats:
+											<ul>
+												<li><a href="" target="blank">LaTeX</a></li>
+												<li><a href="" target="blank">Microsoft Word</a></li>
+												<li><a href="" target="blank">Plain Text</a></li>
+											</ul>
+										</p>
+										
+									</section>
+								<hr />
+									<section id="results">
+										<header>
+											<h3>Results</h3>
+										</header>
+										
+										
+										<h4>RVs of Results</h4>
+										<p>
+											A file with the requested headers and an example row can be found here:  <a href="examples/dataSet_teamName_methodName_results.csv" target="blank">dataSet_teamName_methodName_results.csv</a>
+										</p>
+
+										<p>
+											All RVs should be given in units of <b>m/s</b>.
+										</p>
+
+										<p>
+											We ask that each method at minimum provide cleaned RVs, <b>RV_C</b>, and corresponding errors, <b>eRV_C</b>. These “cleaned RVs” are defined as publication ready RVs  For instance, if you were conducting a planet search, the <b>RV_C</b> values are what that search would be performed on.
+										</p>
+
+										<p>
+											If available, methods should also provide activity RVs, <b>RV_A</b>, and corresponding errors, <b>eRV_A</b>.  These “activity RVs” are defined as shifts attributed to stellar activity/variability or noise.  For methods that do not return separate activity RVs, we will assume the activity RVs are the residuals from the cleaned RVs.
+										</p>
+
+										<p>
+											In other words, if we denote the provided RVs as <b>RV_\odot</b>, we make the assumption that:<br>
+											<b>RV_\odot = RV_C + RV_A</b><br>
+											Where RV_C deviates from zero only due to injected planet shifts and intrinsic scatter.
+										</p>
+
+										<p>
+											For methods that derive any category of activity indicator, we also ask that the value of the indicators be provided along with errors for each value.  Please be sure to specify the unit of the indicator in the column header if possible.
+										</p>
+
+										<p>
+											Each file should contain a <b>Time [MJD]</b> column that exactly mirrors the time stamps of the provided data set.  We ask that results are returned for every observation provided, even if there exists outliers.  Missing values should be left empty or filled in with the string NaN.  There will be a place to discuss reasons why data may be missing or returning outliers in the detailed questions document for each method.
+										</p>
+
+										<h4 id="planet">Planet Recovery</h4>
+										
+										<p>
+											All provided cleaned RVs will be processed using the same planet-fitting pipeline in order to establish a consistent baseline comparison of planet parameters in the returned data.
+										</p>
+
+										<p>
+											Methods that employ joint or otherwise custom planet fitting are asked to also return their best-fit system parameters.  If applicable, please also submit the posteriors for this planet fit.  For these submissions, please submit a CSV file with the following for each planet:
+										</p>
+
+										<ul>
+											<li><b>K</b>: semi-amplitude in m/s</li>
+											<li><b>P</b>: period in days</li>
+											<li><b>t0</b>: time of periastron in MJD</li>
+										</ul>
+										
+										<p align="left">
+											Planet Fit File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFit.csv</b><br>
+											Posterior File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFitPosteriors.csv</b>
+										</p>
+
+										<h4 id="aux">Auxiliary Data</h4>
+										<p>
+											If the method is GP based, we ask that you submit your best-fit hyperparameters and any associated priors.  Please describe what is contained in these files within the detailed method questions.
+										</p>
+										
+										<p align="left">
+											Hyperparameters File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparameters.csv</b><br>
+											Posterior File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparametersPosteriors.csv</b>
+										</p>
+
+										<h4></h4>
+									</section>
+								</article>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Column 1 -->
+								<section class="col-4 col-12-mobile">
+									<section>
+										<span class="icon alt fa-comments"></span>
+										<h4>Feedback Form</h4>
+										<span><a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">Link</a></span>
+									</section>
+								</section>
+
+							<!-- Column 2 -->
+								<section class="col-4 col-12-mobile">
+									<section>
+										<span class="icon solid fa-users"></span>
+										<h4>Collaboration Agreement</h4>
+										<span><a href="" target="blank">Link</a></span>
+									</section>
+								</section>
+
+							<!-- Column 3 -->
+								<section class="col-4 col-12-mobile">
+									<section>
+										<span class="icon alt fa-bookmark"></span>
+										<h4>Previous Reports</h4>
+										<span>
+											<a href="https://ui.adsabs.harvard.edu/abs/2023AJ....166..173Z/abstract" target="blank">ESSP III</a>: solar data across instruments<br>
+											<a href="https://ui.adsabs.harvard.edu/abs/2022AJ....163..171Z/abstract" target="blank">ESSP II</a>: method comparison with EXPRES data
+										</span>
+									</section>
+								</section>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,3 @@
+Name,Nick Name,Contact,Input,Recalculated,Run On,Run Time
+Decorrelation against CCF FWHM,ccf_fwhm,lilylingzhao@uchicago.edu,"RVs, CCF FWHM",None,laptop,seconds
+Decorrelation against H-alpha,halpha,lilylingzhao@uchicago.edu,"RVs, H-alpha emission",None,laptop,seconds

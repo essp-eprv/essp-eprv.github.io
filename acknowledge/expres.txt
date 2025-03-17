@@ -1,0 +1,3 @@
+These results made use of the Lowell Discovery Telescope at Lowell Observatory. Lowell is a private, non-profit institution dedicated to astrophysical research and public appreciation of astronomy and operates the LDT in partnership with Boston University, the University of Maryland, the University of Toledo, Northern Arizona University and Yale University.
+
+The EXPRES team acknowledges support for the design and construction of \expres\ from NSF MRI-1429365, NSF ATI-1509436 and Yale University. DAF gratefully acknowledges support to carry out this research from NSF 2009528, NSF 1616086, NSF AST-2009528, the Heising-Simons Foundation, and an anonymous donor in the Yale alumni community. 

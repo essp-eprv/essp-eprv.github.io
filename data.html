@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ESSP IV: Data</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="overview.html" id="logo">IV</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+                        <nav id="nav">
+                            <ul>
+                                <li><a href="overview.html">Overview</a>
+                                    <ul>
+                                        <li><a href="overview.html#purpose">Statement of Purpose</a></li>
+                                        <li><a href="overview.html#timeline">Timeline</a></li>
+                                        <li><a href="overview.html#feedback">Feedback Form</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="data.html">Data</a>
+                                    <ul>
+                                        <li><a href="data.html#code">Example Code</a></li>
+                                        <li><a href="data.html#spectra">Spectra</a></li>
+                                        <li><a href="data.html#ccf">CCFs</a></li>
+                                        <li><a href="data.html#timeseries">Time Series</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="submission.html">Submission Guidelines</a>
+                                    <ul>
+                                        <li><a href="submission.html#team">Team Information</a></li>
+                                        <li><a href="submission.html#basics">Method Basics</a></li>
+                                        <li><a href="submission.html#details">Method Details</a></li>
+                                        <li><a href="submission.html#results">Results</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="acknowledgements.html">Agreements</a>
+                                    <ul>
+                                        <li><a href="acknowledgements.html#harps">Instrument Acknowledgements</a></li>
+                                        <li><a href="acknowledgements.html#harpsn">Collaboration Agreement</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="qna.html">Q & A</a></li>
+                            </ul>
+                        </nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4-side col-12-mobile-side" id="sidebar">
+								<hr class="first" />
+							<hr />
+								<section>
+									<header>
+										<h3><a href="#code">Example Code</a></h3>
+									</header>
+								</section>
+                            <hr />
+                                <section>
+                                    <header>
+                                        <h3><a href="#spectra">Spectra</a></h3>
+                                    </header>
+                                </section>
+							<hr />
+								<section>
+									<header>
+										<h3><a href="#ccf">CCF</a></h3>
+									</header>
+								</section>
+							<hr />
+								<section>
+									<header>
+										<h3><a href="#timeseries">Time Series</a></h3>
+									</header>
+								</section>
+							<hr />
+							</div>
+							<div class="col-8 col-12-mobile imp-mobile" id="content">
+								<article id="main">
+									<section>
+										<header>
+											<h2>Data Descriptions</h2>
+										</header>
+										<!--<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>-->
+										<p>
+											This page details how to interact with the ESSP IV standardized data products along with links to example code.
+										</p>
+										<p>
+											The data can be accessed via the following link.
+										</p>
+									</section>
+                                <hr />
+                                    <section id="code">
+                                        <header>
+                                            <h3>Example Code</h3>
+                                        </header>
+                                        <ol>
+                                            <li>
+                                                Using spectra from the standardized FITS file<br>
+                                                <a href="" target="blank"><span class="icon solid fa-link"></span></a>
+                                                <a href=""><span class="icon solid fa-download"></span></a>
+                                            </li>
+                                            <li>
+                                                Working with order-by-order and combined CCF<br>
+                                                <a href="" target="blank"><span class="icon solid fa-link"></span></a>
+                                                <a href=""><span class="icon solid fa-download"></span></a>
+                                            </li>
+                                            <li>
+                                                Read time series of RVs/indicatorsx<br>
+                                                <a href="" target="blank"><span class="icon solid fa-link"></span></a>
+                                                <a href=""><span class="icon solid fa-download"></span></a>
+                                            </li>
+                                        </ol>
+                                    </section>
+								<hr />
+									<section id="spectra">
+										<header>
+											<h3>Spectra</h3>
+										</header>
+										<p>
+											Data from all four instruments have been rewritten to a standard FITS format.  The spectral data is stored in different HDUs, which are named by the below keywords.  It should be noted that this standard data will have more NaNs than is typically expected.
+										</p>
+
+                                        <h4>Relative Orders Standardized to Echelle Order</h4>
+
+                                        <p>
+                                            All data have dimensions of [number of orders, number of pixels].
+                                        </p>
+
+                                        <p>
+                                            The orders have been re-organized such that the relative indexing of orders always maps to the same echelle order.  In other words, the first order in every standardized FITS file corresponds to echelle order 161.  Calling the Nth order of this standardized data will return an echelle order of a comparable wavelength regardless of the source instrument (e.g., H-alpha appears in the 68th entry of the standardized data for all instruments).
+                                        </p>
+
+                                        <p>
+                                            Data has been padded as necessary with NaNs.  For instance, NEID orders start at echelle order 161 while EXPRES orders start at echelle order 160.  Therefore, the first entry for every EXPRES file contains only NaNs.  Of particular note is that the HARPS data does not contain echelle order 115 (relative order 46 in the standardized data format).
+                                        </p>
+
+                                        <p>
+                                            There is a simple function in the  <a href="" target="blank">example code for reading spectra</a> to generate a mask of orders that are all NaNs.
+                                        </p>
+                                        
+                                        <h4>Telluric Masking</h4>
+
+                                        <p>
+                                            There are going to be a lot of NaNs b/c the planet injection pipeline just masks out telluric regions.  I’ll add more details here once that pipeline has been fully unit tested.
+                                        </p>
+                                        
+                                        <h4>Standardized Headers</h4>
+
+                                        <p>
+                                            Provide some details on what headers we keep/redefine here.  Or maybe just a link to a relevant table.
+                                        </p>
+                                        
+									</section>
+								<hr />
+									<section id="ccf">
+										<header>
+											<h3>CCF</h3>
+										</header>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec
+										</p>
+									</section>
+                                <hr />
+                                    <section id="timeseries">
+                                        <header>
+                                            <h3>Time Series</h3>
+                                        </header>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec
+                                        </p>
+                                    </section>
+								</article>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Column 1 -->
+								<section class="col-4 col-12-mobile">
+									<section>
+										<span class="icon alt fa-comments"></span>
+										<h4>Feedback Form</h4>
+										<span><a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">Link</a></span>
+									</section>
+								</section>
+
+							<!-- Column 2 -->
+								<section class="col-4 col-12-mobile">
+									<section>
+										<span class="icon solid fa-users"></span>
+										<h4>Collaboration Agreement</h4>
+										<span><a href="" target="blank">Link</a></span>
+									</section>
+								</section>
+
+							<!-- Column 3 -->
+								<section class="col-4 col-12-mobile">
+									<section>
+										<span class="icon alt fa-bookmark"></span>
+										<h4>Previous Reports</h4>
+										<span>
+											<a href="https://ui.adsabs.harvard.edu/abs/2023AJ....166..173Z/abstract" target="blank">ESSP III</a>: solar data across instruments<br>
+											<a href="https://ui.adsabs.harvard.edu/abs/2022AJ....163..171Z/abstract" target="blank">ESSP II</a>: method comparison with EXPRES data
+										</span>
+									</section>
+								</section>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
