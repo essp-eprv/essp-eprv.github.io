@@ -51,12 +51,12 @@
 										<li><a href="submission.html#results">Results</a></li>
 									</ul>
 								</li>
-								<li><a href="acknowledgements.html">Agreements</a>
-									<ul>
-										<li><a href="acknowledgements.html#harps">Instrument Acknowledgements</a></li>
-										<li><a href="acknowledgements.html#harpsn">Collaboration Agreement</a></li>
-									</ul>
-								</li>
+                                <li><a href="acknowledgements.html">Agreements</a>
+                                    <ul>
+                                        <li><a href="acknowledgements.html#instruments">Instrument Acknowledgements</a></li>
+                                        <li><a href="acknowledgements.html#collaboration">Collaboration Agreement</a></li>
+                                    </ul>
+                                </li>
 								<li><a href="qna.html">Q & A</a></li>
 							</ul>
 						</nav>
@@ -110,7 +110,7 @@
 											The next submission deadline is: 
 										</p>
 										<p>
-											Here is a summary of the requested information and requested file names.
+											Here is a summary of the requested information and corresponding file names.  The <span class="icon alt fa-file" height="300px"></span> icons link to example files pre-filled with the required standard column headers and an example row.
 										</p>
 
 										<table>
@@ -122,22 +122,22 @@
 											<tr>
 												<td>1</td>
 												<td><a href="#team">Team Information</a></td>
-												<td>&lt;&lt;Group Name&gt;&gt;_members.csv</td>
+												<td><a href="documents/examples/groupName_members.csv"><span class="icon alt fa-file"></span></a> &lt;&lt;Group Name&gt;&gt;_members.csv</td>
 											</tr>
 											<tr>
 												<td>2</td>
 												<td><a href="#basics">Method Basics</a></td>
-												<td>&lt;&lt;Group Name&gt;&gt;_methods.csv</td>
+												<td><a href="documents/examples/groupName_methods.csv"><span class="icon alt fa-file"></span></a> &lt;&lt;Group Name&gt;&gt;_methods.csv</td>
 											</tr>
 											<tr>
 												<td>3</td>
 												<td><a href="#details">Method Details</a></td>
-												<td>&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;.tex/doc/pdf</td>
+												<td>&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;.<a href="documents/examples/groupName_methodName.tex">tex</a>/<a href="documents/examples/groupName_methodName.docx">docx</a>/<a href="documents/examples/groupName_methodName.txt" target="_blank">txt</a></td>
 											</tr>
 											<tr>
 												<td>4</td>
 												<td><a href="#results">RVs of Results</a></td>
-												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_results.csv</td>
+												<td><a href="documents/examples/dataSet_groupName_methodName_results.csv"><span class="icon alt fa-file"></span></a> &lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_results.csv</td>
 											</tr>
 											<tr>
 												<th style='width:20px'></th>
@@ -146,8 +146,8 @@
 											</tr>
 											<tr>
 												<td>5a</td>
-												<td><a href="#planet">Best Fit Planet Parameters</a></td>
-												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFit.csv</td>
+												<td><a href="#planet">Planet Parameters</a></td>
+												<td><a href="documents/examples/dataSet_groupName_methodName_planetFit.csv"><span class="icon alt fa-file"></span></a> &lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFit.csv</td>
 											</tr>
 											<tr>
 												<td>5b</td>
@@ -172,10 +172,10 @@
 											<h3>Team Information</h3>
 										</header>
 										<p>
-											A file with the requested headers and an example row can be found here: <a href="examples/teamName_members.csv" target="blank">teamName_members.csv</a>
+											A file with the requested headers and an example row can be found here: <a href="documents/examples/groupName_members.csv"><span class="icon alt fa-file"></span></a>
 										</p>
 										<p>
-											Each team should provide a CSV file with the name <b>&lt;&lt;Team Name&gt;&gt;_members.csv</b> with the following columns for each group member.  
+											Each team should provide a CSV file with the name <b>&lt;&lt;Group Name&gt;&gt;_members.csv</b> with the following columns for each group member.  The provided information should reflect how participants wish the information to appear in a published report.
 										</p>
 										<ul>
 											<li>Name</li>
@@ -186,7 +186,7 @@
 										</ul>
 
 										<p>
-											Additional affiliation columns can be added as needed.  The provided names and affiliations should reflect how participants wish the information to appear in a published report.  Needed acknowledgements will be requested at a later stage.
+											Additional affiliation columns can be added as needed.  Needed acknowledgements will be requested at a later stage.
 										</p>
                                         
 									</section>
@@ -196,10 +196,10 @@
 											<h3>Method Basics</h3>
 										</header>
 										<p>
-											A file with the requested headers and an example row can be found here:  <a href="examples/teamName_methods.csv" target="blank">teamName_methods.csv</a>
+											A file with the requested headers and an example row can be found here: <a href="documents/examples/groupName_methods.csv"><span class="icon alt fa-file"></span></a>
 										</p>
 										<p>
-											Each group should provide the following basic information in a CSV file with the name <b>&lt;&lt;Team Name&gt;&gt;_methods.csv</b>.  Groups employing multiple methods should submit just one file with a different row for each method.  Any method or method variation yielding distinct results (i.e., worth being analyzed separately) should be given a separate row.
+											Each group should provide the following basic information in a CSV file with the name <b>&lt;&lt;Group Name&gt;&gt;_methods.csv</b>.  Groups employing multiple methods should submit just one file with a different row for each method.  Any method or method variation yielding distinct results (i.e., worth being analyzed separately) should be given a separate row.
 										</p>
 
 										<p>
@@ -227,15 +227,18 @@
 										<header>
 											<h3>Method Details</h3>
 										</header>
-										<p>
-											We also request more detailed information on each method to be submited with the final results.  These detailed questions focus on  1) a general description of the method, 2) the data requirements for the method, 3) the process of applying the method, and 4) the results of the method.
+										<p align="left">
+											Method Details File Name: <b>&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;.tex/docx/txt</b><br>
 										</p>
 										<p>
-											The questions to be answered are collected in the following file formats:
+											We also request more detailed information on each method to be submited with the final results.  These detailed questions focus on  (1) a general description of the method, (2) the data requirements for the method, (3) the process of applying the method, and (4) the results of the method.  Some questions may not be relevant or are repetitive for your method/answers, in which case a short answer or a "N/A" are appropriate answers. 
+										</p>
+										<p>
+											The questions to be answered are listed <a href="documents/examples/groupName_methodName.pdf" target="_blank">here</a>.  Please download and fill out one of the following templates in the file format of your choice to submit answers.  Submit a separate file for each method.
 											<ul>
-												<li><a href="" target="blank">LaTeX</a></li>
-												<li><a href="" target="blank">Microsoft Word</a></li>
-												<li><a href="" target="blank">Plain Text</a></li>
+												<li><a href="documents/examples/groupName_methodName.tex">LaTeX</a></li>
+												<li><a href="documents/examples/groupName_methodName.docx">Microsoft Word</a></li>
+												<li><a href="documents/examples/groupName_methodName.txt" target="_blank">Plain Text</a></li>
 											</ul>
 										</p>
 										
@@ -247,9 +250,11 @@
 										</header>
 										
 										
-										<h4>RVs of Results</h4>
-										<p>
-											A file with the requested headers and an example row can be found here:  <a href="examples/dataSet_teamName_methodName_results.csv" target="blank">dataSet_teamName_methodName_results.csv</a>
+										<h4>RVs and Indicators</h4>
+										
+										<p align="left">
+											RV/Indicator File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_results.csv</b><br>
+											A file with the requested headers and an example row can be found here: <a href="documents/examples/dataSet_groupName_methodName_results.csv"><span class="icon alt fa-file"></span></a>
 										</p>
 
 										<p>
@@ -257,56 +262,62 @@
 										</p>
 
 										<p>
-											We ask that each method at minimum provide cleaned RVs, <b>RV_C</b>, and corresponding errors, <b>eRV_C</b>. These “cleaned RVs” are defined as publication ready RVs  For instance, if you were conducting a planet search, the <b>RV_C</b> values are what that search would be performed on.
+											Each method must at minimum provide cleaned RVs, <b>RV_C</b>, and corresponding errors, <b>eRV_C</b>. These “cleaned RVs” are defined as publication ready RVs.  For instance, if you were conducting a planet search, the <b>RV_C</b> values are what that search would be performed on.
 										</p>
 
 										<p>
-											If available, methods should also provide activity RVs, <b>RV_A</b>, and corresponding errors, <b>eRV_A</b>.  These “activity RVs” are defined as shifts attributed to stellar activity/variability or noise.  For methods that do not return separate activity RVs, we will assume the activity RVs are the residuals from the cleaned RVs.
+											If available, methods should also provide activity RVs, <b>RV_A</b>, and corresponding errors, <b>eRV_A</b>.  These “activity RVs” are defined broadly as shifts attributed to stellar activity/variability or other signals that have been removed by the method.  For methods that do not return separate activity RVs, we will assume that the activity RVs are the residuals from the cleaned RVs.
 										</p>
 
 										<p>
-											In other words, if we denote the provided RVs as <b>RV_\odot</b>, we make the assumption that:<br>
-											<b>RV_\odot = RV_C + RV_A</b><br>
+											In other words, if we denote the provided RVs as <b>RV<sub>&odot;</sub></b>, we make the assumption that:<br>
+											<b>RV<sub>&odot;</sub> = RV_C + RV_A</b><br>
 											Where RV_C deviates from zero only due to injected planet shifts and intrinsic scatter.
 										</p>
 
 										<p>
-											For methods that derive any category of activity indicator, we also ask that the value of the indicators be provided along with errors for each value.  Please be sure to specify the unit of the indicator in the column header if possible.
+											For methods that derive any category of activity indicator, we also ask that the value of the indicators be provided along with errors if possible.  Please be sure to specify the unit of the indicator in the column header if it exists.
 										</p>
 
 										<p>
-											Each file should contain a <b>Time [MJD]</b> column that exactly mirrors the time stamps of the provided data set.  We ask that results are returned for every observation provided, even if there exists outliers.  Missing values should be left empty or filled in with the string NaN.  There will be a place to discuss reasons why data may be missing or returning outliers in the detailed questions document for each method.
+											Each file should contain a <b>Time [MJD]</b> column that exactly mirrors the time stamps of the provided data set.  We ask that results are returned for every observation provided, even if there exists outliers.  Missing values should be left empty or filled in with the string NaN.  There is space to discuss missing data and outliers in the detailed questions document for each method.
 										</p>
 
-										<h4 id="planet">Planet Recovery</h4>
-										
-										<p>
-											All provided cleaned RVs will be processed using the same planet-fitting pipeline in order to establish a consistent baseline comparison of planet parameters in the returned data.
-										</p>
-
-										<p>
-											Methods that employ joint or otherwise custom planet fitting are asked to also return their best-fit system parameters.  If applicable, please also submit the posteriors for this planet fit.  For these submissions, please submit a CSV file with the following for each planet:
-										</p>
-
-										<ul>
-											<li><b>K</b>: semi-amplitude in m/s</li>
-											<li><b>P</b>: period in days</li>
-											<li><b>t0</b>: time of periastron in MJD</li>
-										</ul>
+										<h4 id="planet">Best-Fit Planet Parameters</h4>
 										
 										<p align="left">
 											Planet Fit File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFit.csv</b><br>
 											Posterior File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFitPosteriors.csv</b>
 										</p>
 
-										<h4 id="aux">Auxiliary Data</h4>
 										<p>
-											If the method is GP based, we ask that you submit your best-fit hyperparameters and any associated priors.  Please describe what is contained in these files within the detailed method questions.
+											A file with the requested headers and an example row for reporting best fit planet parameters can be found here:  <a href="documents/examples/dataSet_groupName_methodName_planetFit.csv"><span class="icon alt fa-file"></span></a>
 										</p>
+										
+										<p>
+											All provided cleaned RVs will be processed using the same planet-fitting pipeline in order to establish a consistent baseline comparison of Keplerian signals present in the returned data.
+										</p>
+
+										<p>
+											Methods that employ joint or otherwise custom planet fitting are asked to also return their best-fit system parameters.  If applicable, please also submit the posteriors for this planet fit.  For these submissions, please submit a CSV file with a row for each planet reporting the following parameters.
+										</p>
+
+										<ul>
+											<li><b>K [m/s]</b>: semi-amplitude in m/s</li>
+											<li><b>P [d]</b>: period in days</li>
+											<li><b>t0 [vmjd]</b>: time of periastron in MJD</li>
+											<li><b>e</b>: eccentricity</li>
+											<li><b>w [deg]</b>: argument of periastron in degrees</li>
+										</ul>
+
+										<h4 id="aux">Auxiliary Data</h4>
 										
 										<p align="left">
 											Hyperparameters File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparameters.csv</b><br>
 											Posterior File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparametersPosteriors.csv</b>
+										</p>
+										<p>
+											If the method is GP based, we ask that you submit your best-fit hyperparameters and any associated priors.  Please describe what is contained in these files within the detailed method questions.
 										</p>
 
 										<h4></h4>

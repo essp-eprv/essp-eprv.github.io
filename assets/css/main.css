@@ -194,8 +194,12 @@ input, select, textarea {
 		font-style: italic;
 	}
 
-	p, ul, ol, dl, table {
+	p, ol, dl, table {
 		margin-bottom: 1em;
+	}
+
+	ul, table {
+		margin-bottom: 0em;
 	}
 
 	p {

@@ -1,0 +1,195 @@
+@INPROCEEDINGS{NEID,
+       author = {{Schwab}, C. and {Rakich}, A. and {Gong}, Q. and {Mahadevan}, S. and
+         {Halverson}, S.~P. and {Roy}, A. and {Terrien}, R.~C. and
+         {Robertson}, P.~M. and {Hearty}, F.~R. and {Levi}, E.~I. and
+         {Monson}, A.~J. and {Wright}, J.~T. and {McElwain}, M.~W. and
+         {Bender}, C.~F. and {Blake}, C.~H. and {St{\"u}rmer}, J. and
+         {Gurevich}, Y.~V. and {Chakraborty}, A. and {Ramsey}, L.~W.},
+        title = "{Design of NEID, an extreme precision Doppler spectrograph for WIYN}",
+    booktitle = {Ground-based and Airborne Instrumentation for Astronomy VI},
+         year = 2016,
+       series = {Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series},
+       volume = {9908},
+        month = aug,
+          eid = {99087H},
+        pages = {99087H},
+          doi = {10.1117/12.2234411},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2016SPIE.9908E..7HS},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@article{Blake2019,
+	author = {Cullen H. Blake and Dan Li and Joseph R. Tufts and Joe P. Ninan and Suvrath Mahadevan and Chad F. Bender and Frederick R. Hearty and Andrew J. Monson and Mark Giovinazzi},
+	title = {{Improving the thermal stability of a CCD through clocking}},
+	volume = {5},
+	journal = {Journal of Astronomical Telescopes, Instruments, and Systems},
+	number = {4},
+	publisher = {SPIE},
+	pages = {1 -- 6},
+	keywords = {charge-coupled-device imagers, spectrometers, thermal effects},
+	year = {2019},
+	doi = {10.1117/1.JATIS.5.4.041510},
+	URL = {https://doi.org/10.1117/1.JATIS.5.4.041510}
+}
+
+@INPROCEEDINGS{NEID_Port_Overview,
+       author = {{Logsdon}, Sarah E. and {McElwain}, Michael W. and {Gong}, Qian and
+         {Liang}, Ming and {Santoro}, Fernando and {Schwab}, Christian and
+         {Bender}, Chad and {Blake}, Cullen and {Halverson}, Samuel and
+         {Hearty}, Fred},
+        title = "{The NEID precision radial velocity spectrometer: port adapter overview, requirements, and test plan}",
+    booktitle = {Ground-based and Airborne Instrumentation for Astronomy VII},
+         year = "2018",
+       series = {Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series},
+       volume = {10702},
+        month = "Jul",
+          eid = {1070267},
+        pages = {1070267},
+          doi = {10.1117/12.2312209},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2018SPIE10702E..67L},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@INPROCEEDINGS{NEID_Tip_Tilt,
+       author = {{Percival}, Jeffrey W. and {Gong}, Qian and {Harbeck}, Daniel and
+         {Hunting}, Emily and {Jaehnig}, Kurt P. and {Liang}, Ming and
+         {Logsdon}, Sarah E. and {McElwain}, Michael W. and
+         {Rajagopal}, Jayadev and {Schwab}, Christian},
+        title = "{The NEID precision radial velocity spectrometer: fast, first-order wavefront correction}",
+    booktitle = {Ground-based and Airborne Instrumentation for Astronomy VII},
+         year = "2018",
+       series = {Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series},
+       volume = {10702},
+        month = "Jul",
+          eid = {107026M},
+        pages = {107026M},
+          doi = {10.1117/12.2313433},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2018SPIE10702E..6MP},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@INPROCEEDINGS{NEID_Port_Design,
+       author = {{Schwab}, Christian and {Liang}, Ming and {Gong}, Qian and
+         {Bender}, Chad and {Blake}, Cullen and {Halverson}, Samuel and
+         {Harbeck}, Daniel and {Hearty}, Fred and {Hunting}, Emily and
+         {Jaehnig}, Kurt P.},
+        title = "{The NEID precision radial velocity spectrometer: optical design of the port adapter and ADC}",
+    booktitle = {Ground-based and Airborne Instrumentation for Astronomy VII},
+         year = "2018",
+       series = {Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series},
+       volume = {10702},
+        month = "Jul",
+          eid = {1070271},
+        pages = {1070271},
+          doi = {10.1117/12.2314420},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2018SPIE10702E..71S},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@ARTICLE{BallScrambler,
+   author = {{Halverson}, S. and {Roy}, A. and {Mahadevan}, S. and {Ramsey}, L. and 
+	{Levi}, E. and {Schwab}, C. and {Hearty}, F. and {MacDonald}, N.
+	},
+    title = "{An Efficient, Compact, and Versatile Fiber Double Scrambler for High Precision Radial Velocity Instruments}",
+  journal = {\apj},
+archivePrefix = "arXiv",
+   eprint = {1505.07463},
+ primaryClass = "astro-ph.IM",
+ keywords = {instrumentation: spectrographs, techniques: radial velocities, techniques: spectroscopic},
+     year = 2015,
+    month = jun,
+   volume = 806,
+      eid = {61},
+    pages = {61},
+      doi = {10.1088/0004-637X/806/1/61},
+   adsurl = {http://adsabs.harvard.edu/abs/2015ApJ...806...61H},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@INPROCEEDINGS{NEID_budget,
+   author = {{Halverson}, S. and {Terrien}, R. and {Mahadevan}, S. and {Roy}, A. and 
+	{Bender}, C. and {Stef{\'a}nsson}, G.~K. and {Monson}, A. and 
+	{Levi}, E. and {Hearty}, F. and {Blake}, C. and {McElwain}, M. and 
+	{Schwab}, C. and {Ramsey}, L. and {Wright}, J. and {Wang}, S. and 
+	{Gong}, Q. and {Roberston}, P.},
+    title = "{A comprehensive radial velocity error budget for next generation Doppler spectrometers}",
+booktitle = {Ground-based and Airborne Instrumentation for Astronomy VI},
+     year = 2016,
+   series = {\procspie},
+   volume = 9908,
+archivePrefix = "arXiv",
+   eprint = {1607.05634},
+ primaryClass = "astro-ph.IM",
+    month = aug,
+      eid = {99086P},
+    pages = {99086P},
+      doi = {10.1117/12.2232761},
+   adsurl = {http://adsabs.harvard.edu/abs/2016SPIE.9908E..6PH},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@INPROCEEDINGS{Robertson_thermal,
+   author = {{Robertson}, P.~M. and {Hearty}, F.~R. and {Anderson}, T.~B. and 
+	{Stef{\'a}nsson}, G.~K. and {Levi}, E.~I. and {Bender}, C.~F. and 
+	{Mahadevan}, S. and {Halverson}, S.~P. and {Monson}, A.~J. and 
+	{Ramsey}, L.~W. and {Roy}, A. and {Schwab}, C. and {Terrien}, R.~C. and 
+	{Nelson}, M.~J. and {Blank}, B.},
+    title = "{A system to provide sub-milliKelvin temperature control at T 300K for extreme precision optical radial velocimetry}",
+booktitle = {Ground-based and Airborne Instrumentation for Astronomy VI},
+     year = 2016,
+   series = {\procspie},
+   volume = 9908,
+    month = aug,
+      eid = {990862},
+    pages = {990862},
+      doi = {10.1117/12.2231311},
+   adsurl = {http://adsabs.harvard.edu/abs/2016SPIE.9908E..62R},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@ARTICLE{Robertson_environment,
+       author = {{Robertson}, Paul and {Anderson}, Tyler and {Stefansson}, Gudmundur and
+         {Hearty}, Frederick R. and {Monson}, Andrew and {Mahadevan}, Suvrath and
+         {Blakeslee}, Scott and {Bender}, Chad and {Ninan}, Joe P. and
+         {Conran}, David and {Levi}, Eric and {Lubar}, Emily and {Cole}, Amanda and
+         {Dykhouse}, Adam and {Kanodia}, Shubham and {Nitroy}, Colin and
+         {Smolsky}, Joseph and {Tuggle}, Demetrius and {Blank}, Basil and
+         {Nelson}, Matthew and {Blake}, Cullen and {Halverson}, Samuel and
+         {Henderson}, Chuck and {Kaplan}, Kyle F. and {Li}, Dan and
+         {Logsdon}, Sarah E. and {McElwain}, Michael W. and
+         {Rajagopal}, Jayadev and {Ramsey}, Lawrence W. and {Roy}, Arpita and
+         {Schwab}, Christian and {Terrien}, Ryan and {Wright}, Jason T.},
+        title = "{Ultrastable environment control for the NEID spectrometer: design and performance demonstration}",
+      journal = {Journal of Astronomical Telescopes, Instruments, and Systems},
+     keywords = {Astrophysics - Instrumentation and Methods for Astrophysics, Astrophysics - Earth and Planetary Astrophysics},
+         year = "2019",
+        month = "Jan",
+       volume = {5},
+          eid = {015003},
+        pages = {015003},
+          doi = {10.1117/1.JATIS.5.1.015003},
+archivePrefix = {arXiv},
+       eprint = {1902.07729},
+ primaryClass = {astro-ph.IM},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2019JATIS...5a5003R},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@ARTICLE{NEID_solar_hardware,
+       author = {{Lin}, Andrea S.~J. and {Monson}, Andrew and {Mahadevan}, Suvrath and {Ninan}, Joe P. and {Halverson}, Samuel and {Nitroy}, Colin and {Bender}, Chad F. and {Logsdon}, Sarah E. and {Kanodia}, Shubham and {Terrien}, Ryan C. and {Roy}, Arpita and {Luhn}, Jacob K. and {Gupta}, Arvind F. and {Ford}, Eric B. and {Hearty}, Fred and {Laher}, Russ R. and {Hunting}, Emily and {McBride}, William R. and {Salazar Rivera}, Noah Isaac and {Rajagopal}, Jayadev and {Wolf}, Marsha J. and {Robertson}, Paul and {Wright}, Jason T. and {Blake}, Cullen H. and {Ca{\~n}as}, Caleb I. and {Lubar}, Emily and {McElwain}, Michael W. and {Ramsey}, Lawrence W. and {Schwab}, Christian and {Stefansson}, Gudmundur},
+        title = "{Observing the Sun as a Star: Design and Early Results from the NEID Solar Feed}",
+      journal = {\aj},
+     keywords = {Exoplanets, Radial velocity, Solar telescopes, Solar activity, 498, 1332, 1531, 1475, Astrophysics - Instrumentation and Methods for Astrophysics, Astrophysics - Earth and Planetary Astrophysics, Astrophysics - Solar and Stellar Astrophysics},
+         year = 2022,
+        month = apr,
+       volume = {163},
+       number = {4},
+          eid = {184},
+        pages = {184},
+          doi = {10.3847/1538-3881/ac5622},
+archivePrefix = {arXiv},
+       eprint = {2112.05711},
+ primaryClass = {astro-ph.IM},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022AJ....163..184L},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}

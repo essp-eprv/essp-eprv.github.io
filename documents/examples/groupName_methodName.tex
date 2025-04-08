@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsrefs}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage[all]{xy}
+\usepackage[mathcal]{eucal}
+\usepackage{verbatim}  %%includes comment environment
+\usepackage{fullpage}  %%smaller margins
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+%\usepackage{cite}
+\usepackage{setspace}
+\usepackage[margin=.75in]{geometry}
+\usepackage{lscape}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{sectsty}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1\baselineskip}{0.3\baselineskip}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize}
+%\usepackage{indentfirst}
+\setlength{\parindent}{0em}
+
+\numberwithin{equation}{section}
+
+\usepackage[labelfont=sc]{caption}
+\captionsetup{labelfont=sc}
+
+\begin{document}
+\noindent
+\textbf{Method Name}: \\
+\hfill
+
+\noindent
+Please submit one set of answers for each method.  Some questions may not be relevant or are repetitive for your method/answers, in which case a short answer or a ``N/A'' are appropriate answers.
+
+\section{Detailed Description of the Method}
+\subsection{Please provide a short (1-2 paragraph) summary of the general idea of the method.  What does the method do and how?  If the method has been previously published, please provide a link to that work in addition to answering this and the following questions.}
+
+\subsection{What is the method designed to be sensitive to (e.g. asymmetric line shapes, certain periodicities, etc.)?}
+
+\subsection{Are there known advantages to this method?  Is there something in particular that sets this analysis apart from previous methods?}
+
+\subsection{Are there known limitations of the method or core implicit/explicit assumptions that must be true for the method to perform well?}
+
+\subsection{What does the method output, and how is this used to mitigate contributions from photospheric velocities?}
+
+\subsection{Please explicitly state what is meant by the ``cleaned'' RVs (RV\_C) submitted for the method.}
+
+\subsection{If you provided ``activity'' RVs (RV\_A) values, please state explicitly what these are.}
+
+\subsection{Is an implementation of the method publicly available? If so, please provide a link to the code base.}
+
+\subsection{Has this method been tested on Sun-as-a-star data before? If so, what solar data was used and in what capacity?}
+
+\subsection{Is this method designed to account for instrumental effects? If so, is this done in such a way as to be separable from photospheric velocities}
+
+\subsection{Any additional comments}
+
+
+\section{Data Requirements}
+\subsection{What is the ideal data set for this method?  Please comment specifically on properties such as the acceptable level of uncertainty on the provided data products, minimum resolution, cadence of observations, total number of observations, time coverage of the complete data set, stellar spectral type, etc.}
+
+\subsection{Are there any absolute requirements of the data that must be satisfied in order for this method to work?  Rough estimates welcome.}
+
+\subsection{Is there any prior knowledge about the star or planets that is required and/or would help the method? (e.g., Prot, Teff, transit constraints, etc.)}
+
+\subsection{Are there other analysis methods or pre-processing that could be paired with this method to potentially help the method?}
+
+\subsection{Did the masking of telluric regions affect how the method could be and/or was applied?  Is there any telluric masking or modeling inherent to the method?  What, if anything, would the method gain from telluric modeling over masking?}
+
+\subsection{Are there any notable differences in how this method operates or is expected to operate on solar data as opposed to stellar data?}
+
+\subsection{Was any outside data (i.e., not provided by the ESSP) used when applying your method?  If so, what was this data and how was it used? This includes any outside training data.}
+
+\subsection{Any additional comments?}
+
+
+\section{Applying the Method}
+\subsection{What adjustments were required to implement this method on the provided solar data?  Were there any unexpected challenges?}
+
+\subsection{What adjustments, if any, were required to implement this method on data from different instruments?}
+
+\subsection{What metric does the method use internally to decide if the method is performing better or worse?  (e.g.\ nightly RMS, specific likelihood function, etc.)}
+
+\subsection{How robust is the method to different input parameters or hyperparameters--i.e. does running the method require a lot of tuning to be implemented optimally?  If so, how were the optimal values determined? In the case of determining best-fit (hyper-)parameters, what search algorithm or tuning methods were used (e.g. L-M, MCMC, convergence criteria, etc.)?}
+
+\subsection{Any additional comments?}
+
+
+\section{Reflection on the Results}
+\subsection{Did the method perform as expected?  If not, are there adjustments that could be made to the data or observing schedule to enhance the result?}
+
+\subsection{Was the method able to run on all exposures?  If not, is there a known reason why it failed for some exposures?}
+
+\subsection{Is there any additional analysis or data that would have helped your method or produced a more confident result?  (e.g. photometry, follow-up data, etc.)}
+
+\subsection{If the method is GP based, please describe the kernel used and how the best-fit hyperparameters were determined.   In a separate file (see submission guidelines), please provide the best-fit hyper parameters with errors, any priors used for the fit, as well as posteriors if applicable.  Describe what is contained in that file here.}
+
+\subsection{If the method jointly fits a Keplerian signal, please describe how this is done and how the best-fit planet parameters were determined.  In a separate file (see submission guidelines), please provide the best-fit planet parameters with errors, any priors used for the fit, as well as posteriors if applicable.}
+
+\subsection{Any additional comments?}
+
+
+\section{General Comments}
+\subsection{Any notes on how to pronounce the name of the method or how you would like it represented in text?}
+
+\subsection{Any additional comments?}
+
+
+\end{document}
