@@ -1,5 +1,13 @@
+% START HARPS ACKNOWLEDGEMENTS
+The HELIOS solar telescope is located at the ESO 3.6m Telescope facility at the La Silla Observatory in Chile, and is connected to the HARPS and NIRPS spectrographs.  HELIOS (PI: Xavier Dumusque & Pedro Figueira) was funded through Portuguese FCT funding and the Branco Weiss fellowship. 
+
 % START HARPS-N ACKNOWLEDGEMENTS
-The HARPS-N project was funded by the Prodex Program of the Swiss Space Office (SSO), the Harvard University Origin of Life Initiative (HUOLI), the Scottish Universities Physics Alliance (SUPA), the University of Geneva, the Smithsonian Astrophysical Observatory (SAO), the Italian National Astrophysical Institute (INAF), University of St. Andrews, Queen’s University Belfast, and University of Edinburgh.
+The HARPS-N project was funded by the Prodex Program of the Swiss Space Office (SSO), the The HARPS-N solar telescope is located at the TNG facility at the Roque de los Muchachos Observatory in La Palma, Spain, and is connected to the HARPS-N spectrograph.  The HARPS-N solar telescope (PI: Xavier Dumusque & David Phillips) was funded with support from Smithsonian R&D internal funding and the Branco Weiss fellowship.
+
+The HARPS-N project was funded by the Prodex Program of the Swiss Space Office (SSO), the Harvard University Origin of Life Initiative (HUOLI), the Scottish Universities Physics Alliance (SUPA), the University of Geneva, the Smithsonian Astrophysical Observatory (SAO), the Italian National Astrophysical Institute (INAF), University of St. Andrews, Queen’s University Belfast, and University of Edinburgh.  We thank the HARPS-N solar team and TNG staff for processing the solar data and maintaining the solar telescope.
+
+% START HARPS/HARPS-N ACKNOWLEDGEMENTS
+Maintenance and upgrade of both the HELIOS and the HARPS-N telescope was possible thanks to support from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement SCORE No 851555) and from the Swiss National Science Foundation under the grant SPECTRE (No 200021_215200). 
 
 % START EXPRES ACKNOWLEDGEMENTS
 These results made use of the Lowell Discovery Telescope at Lowell Observatory. Lowell is a private, non-profit institution dedicated to astrophysical research and public appreciation of astronomy and operates the LDT in partnership with Boston University, the University of Maryland, the University of Toledo, Northern Arizona University and Yale University.

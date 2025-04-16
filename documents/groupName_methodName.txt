@@ -56,7 +56,7 @@ Please submit one set of answers for each method.  Some questions may not be rel
 3.5.  Any additional comments?
 
 
-(4) Reflection on the Results
+(4) Method Outputs
 4.1.  Did the method perform as expected?  If not, are there adjustments that could be made to the data or observing schedule to enhance the result?
 
 4.2.  Was the method able to run on all exposures?  If not, is there a known reason why it failed for some exposures?
