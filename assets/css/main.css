@@ -2081,6 +2081,10 @@ input, select, textarea {
 		border-collapse: collapse;
 		padding: 5px;
 	}
+	table.bordered th{
+		font-weight: bold;
+		text-align: left;
+	}
 
 /* Button */
 
