@@ -189,8 +189,9 @@
 										</header>
 										<p>
 											Team Information File Name: <b>&lt;&lt;Group Name&gt;&gt;_members.csv</b><br>
-											A file with the requested headers and an example row can be found here: <a href="documents/examples/groupName_members.csv"><span class="icon alt fa-file"></span></a>
+											A file pre-filled with the requested column names can be accessed here: <a href="documents/examples/groupName_members.csv"><span class="icon alt fa-file"></span></a>
 										</p>
+
 										<p>
 											Each team should provide a CSV file with the following columns for each group member.  The provided information should reflect how participants wish the information to appear in a published report.
 											<ul>
@@ -203,7 +204,30 @@
 										</p>
 
 										<p>
-											Additional affiliation columns can be added as needed.  Needed acknowledgements will be requested at a later stage.
+											Additional, numbered affiliation columns can be added as needed.  Needed acknowledgements will be requested at a later stage.
+										</p>
+
+										<p>
+											An example submission would look as follows:
+											<table class="bordered">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>E-mail</th>
+														<th>ORCID iD</th>
+														<th>Affiliation</th>
+														<th>Affiliation2</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Lily L. Zhao</td>
+														<td>email@site.com</td>
+														<td>0000-0002-3852-3590</td>
+														<td>Department of Astronomy &amp; Astrophysics, University of Chicago, Chicago, IL, USA</td>
+													</tr>
+												</tbody>
+											</table>
 										</p>
                                         
 									</section>
@@ -215,7 +239,7 @@
 
 										<p>
 											Method Basics File Name: <b>&lt;&lt;Group Name&gt;&gt;_methods.csv</b><br>
-											A file with the requested headers and an example row can be found here: <a href="documents/examples/groupName_methods.csv"><span class="icon alt fa-file"></span></a>
+											A file pre-filled with the requested column names can be accessed here: <a href="documents/examples/groupName_methods.csv"><span class="icon alt fa-file"></span></a>
 										</p>
 
 										<p>
@@ -237,6 +261,43 @@
 
 										<p>
 											An example of how this data will be compiled can be found in Table 6 of the <a href="https://ui.adsabs.harvard.edu/abs/2022AJ....163..171Z/abstract" target="blank">ESSP II report</a>.
+										</p>
+
+										<p>
+											An example submission would look as follows:
+											<table class="bordered">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Nick Name</th>
+														<th>Contact</th>
+														<th>Input</th>
+														<th>Recalculated</th>
+														<th>Run On</th>
+														<th>Run Time</th>
+													</tr>
+											</thead>
+												<tbody>
+													<tr>
+														<td>Decorrelation against CCF FWHM</td>
+														<td>ccf_fwhm</td>
+														<td>email@site.com</td>
+														<td>RVs, CCF FWHM</td>
+														<td>None</td>
+														<td>laptop</td>
+														<td>seconds</td>
+													</tr>
+													<tr>
+														<td>Decorrelation against H-alpha</td>
+														<td>halpha</td>
+														<td>email@site.com</td>
+														<td>RVs, H-alpha emission</td>
+														<td>None</td>
+														<td>laptop</td>
+														<td>seconds</td>
+													</tr>
+												</tbody>
+											</table>
 										</p>
 											
 										
@@ -273,11 +334,15 @@
 										
 										<p align="left">
 											RV/Indicator File Name: <b>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_results.csv</b><br>
-											A file with the requested headers and an example row can be found here: <a href="documents/examples/dataSet_groupName_methodName_results.csv"><span class="icon alt fa-file"></span></a>
+											A file pre-filled with the requested column names can be accessed here: <a href="documents/examples/dataSet_groupName_methodName_results.csv"><span class="icon alt fa-file"></span></a>
 										</p>
 
 										<p>
 											All RVs should be given in units of <b>m/s</b>.
+										</p>
+
+										<p>
+                                            We ask that all methods submit results using the provided standardized data products.  If you would also like to test your methods on custom generated data products, we ask that you submit those results <i>in addition to</i> results submitted using the standardized data products.
 										</p>
 
 										<p>
@@ -299,8 +364,37 @@
 										</p>
 
 										<p>
-											Each file should contain a <b>Time [MJD]</b> column that exactly mirrors the time stamps of the provided data set.  We ask that results are returned for every observation provided, even if there exists outliers.  Missing values should be left empty or filled in with the string NaN.  There is space to discuss missing data and outliers in the detailed questions document for each method.
+											Each file should contain a <b>Time [eMJD]</b> column that exactly mirrors the time stamps of the provided data set.  We ask that results are returned for every observation provided, even if there exists outliers.  Missing values should be left empty or filled in with the string NaN.  There is space to discuss missing data and outliers in the detailed questions document for each method.
 										</p>
+
+										<p>
+											An example submission would look as follows:
+											<table class="bordered">
+												<thead>
+													<tr>
+														<th>Time [eMJD]</th>
+														<th>RV_C</th>
+														<th>eRV_C</th>
+														<th>RV_A</th>
+														<th>eRV_A</th>
+														<th>Ind. [U]</th>
+														<th>eInd. [U]</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>59331.138194</td>
+														<td>0</td>
+														<td>0.3</td>
+														<td>NaN</td>
+														<td>NaN</td>
+														<td>4</td>
+														<td>NaN</td>
+													</tr>
+												</tbody>
+											</table>
+										</p>
+
 
 										<h4 id="planet">Best-Fit Planet Parameters</h4>
 										
@@ -310,7 +404,7 @@
 										</p>
 
 										<p>
-											A file with the requested headers and an example row for reporting best fit planet parameters can be found here:  <a href="documents/examples/dataSet_groupName_methodName_planetFit.csv"><span class="icon alt fa-file"></span></a>
+											A file pre-filled with the requested column names for best-fit planet parameters can be accessed here:  <a href="documents/examples/dataSet_groupName_methodName_planetFit.csv"><span class="icon alt fa-file"></span></a>
 										</p>
 										
 										<p>
@@ -329,6 +423,30 @@
 												<li><b>e</b>: eccentricity</li>
 												<li><b>w [deg]</b>: argument of periastron in degrees</li>
 											</ul>
+										</p>
+
+										<p>
+											An example submission would look as follows:
+											<table class="bordered">
+												<thead>
+													<tr>
+														<th>K [m/s]</th>
+														<th>P [d]</th>
+														<th>t0 [eMJD]</th>
+														<th>e</th>
+														<th>w [deg]</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>0.09</td>
+														<td>365.24</td>
+														<td>59331.138194</td>
+														<td>0.017</td>
+														<td>30</td>
+													</tr>
+												</tbody>
+											</table>
 										</p>
 
 
