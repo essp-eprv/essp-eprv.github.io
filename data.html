@@ -103,8 +103,17 @@
 										</header>
 										<!--<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>-->
 										<p>
-											This page details how to interact with the ESSP IV standardized data products along with links to example code.
+											This page details the ESSP IV standardized data products, important things to note, and provides links to example code.
 										</p>
+
+										<p>
+                                            We ask that all methods submit results using the provided standardized data products.  If you would also like to test your methods on custom generated data products, we ask that you submit those results <i>in addition to</i> results submitted using the standardized data products.
+										</p>
+
+										<p>
+											For any and all data issues, do not hesitate to reach out using the <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">feedback form</a> or e-mailing Lily (lilylingzhao[at]uchicago.edu) directly.
+										</p>
+
 										<p>
 											The data can be accessed via the following link.
 										</p>
@@ -115,22 +124,25 @@
                                             <h3>Example Code</h3>
                                         </header>
                                         <ol>
-                                            <li>
-                                                Using spectra from the standardized FITS file<br>
-                                                <a href="" target="blank"><span class="icon solid fa-terminal"></span></a>
-                                                <a href=""><span class="icon solid fa-code" target="_blank"></span></a>
+                                            <li id="example_spectra">
+                                                ESSP IV standardized spectra<br>
+                                                <a href="documents/code/essp4_spec.ipynb" download>ipynb</a>
+                                                <!--<a href=""><span class="icon solid fa-terminal"></span></a>-->
+                                                <!--<a href=""><span class="icon solid fa-code" target="_blank"></span></a>-->
                                             </li>
-                                            <li>
-                                                Working with order-by-order and combined CCF<br>
-                                                <a href="" target="blank"><span class="icon solid fa-terminal"></span></a>
-                                                <a href=""><span class="icon solid fa-code"></span></a>
+                                            <li id="example_ccf">
+                                                ESSP IV order-by-order and combined CCF<br>
+                                                <a href="documents/code/essp4_ccfs.ipynb" download>ipynb</a>
                                             </li>
-                                            <li>
-                                                Read time series of RVs/indicators<br>
-                                                <a href="" target="blank"><span class="icon solid fa-terminal"></span></a>
-                                                <a href=""><span class="icon solid fa-code"></span></a>
+                                            <li id="example_timeseries">
+                                                Time series of RVs/indicators<br>
+                                                <a href="documents/code/essp4_timeSeries.ipynb" download>ipynb</a>
                                             </li>
                                         </ol>
+                                        <p>
+                                            Please do not hesitate to <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if there is any additional code you would find helpful or examples in additional coding languages.
+                                        </p>
+                                        
                                     </section>
 								<hr />
 									<section id="spectra">
@@ -138,14 +150,60 @@
 											<h3>Spectra</h3>
 										</header>
 										<p>
-											Data from all four instruments have been rewritten to a standard FITS format.  The spectral data is stored in different HDUs, which are named by the below keywords.  It should be noted that this standard data will have more NaNs than is typically expected.
+											Data from all four instruments have been rewritten to a standard FITS format.  The spectral data is stored in different HDUs, which are named by the below keywords.  All data have dimensions of [number of orders, number of pixels].
 										</p>
 
-                                        <h4>Relative Orders Standardized to Echelle Order</h4>
-
                                         <p>
-                                            All data have dimensions of [number of orders, number of pixels].
+                                        <table class="bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="bordered" align="left" style='width:150px'><b>Keyword</b></th>
+                                                    <th align="left"><b>Description</b></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>WAVELENGTH</td>
+                                                    <td>Barycentric corrected wavelengths in angstroms</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FLUX</td>
+                                                    <td>Intensity at the given wavelength; includes instrument blaze response</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNCERTAINTY</td>
+                                                    <td>Standard deviation for each flux value as assigned by each instrument’s data reduction pipeline</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CONTINUUM</td>
+                                                    <td>Continuum model</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BLAZE</td>
+                                                    <td>Blaze model, the origin of which differs slightly for each instrument, but all can be used to remove the general blaze shape from the FLUX array</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>COMMON_MASK</td>
+                                                    <td>A binary mask that is True for wavelengths that are present for all instruments</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>TELLURIC_MASK</td>
+                                                    <td>A binary mask that is True where telluric features have been masked and spectral values are replaced with NaNs</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                         </p>
+
+                                        <h4>Important to Note</h4>
+                                        
+                                        <ol>
+                                            <li>Some orders will have only NaN values (<a href="#padded_orders">read more</a>)</li>
+                                            <li>Redder orders will have NaNs sprinkled throughout where telluric lines have been masked (<a href="#telluric_masking">read more</a>)</li>
+                                            <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
+                                            <li>Masking may be required of the low SNR EXPRES order edges (<a href="#expres_edges">read more</a>)</li>
+                                        </ol>
+
+                                        <h4 id="padded_orders">Relative Orders Standardized to Echelle Order</h4>
 
                                         <p>
                                             The orders have been re-organized such that the relative indexing of orders always maps to the same echelle order.  In other words, the first order in every standardized FITS file corresponds to echelle order 161.  Calling the Nth order of this standardized data will return an echelle order of a comparable wavelength regardless of the source instrument (e.g., H-alpha appears in the 68th entry of the standardized data for all instruments).
@@ -156,19 +214,40 @@
                                         </p>
 
                                         <p>
-                                            There is a simple function in the  <a href="" target="blank">example code for reading spectra</a> to generate a mask of orders that are all NaNs.
+                                            The provided <a href="#example_spectra">example code</a> includes a simple function that generates a mask that excludes orders that are all NaNs.
                                         </p>
                                         
-                                        <h4>Telluric Masking</h4>
+                                        <h4 id="telluric_masking">Telluric Masking</h4>
 
                                         <p>
-                                            There are going to be a lot of NaNs b/c the planet injection pipeline just masks out telluric regions.  I’ll add more details here once that pipeline has been fully unit tested.
+                                            In addition to the all NaN orders described above, there will also be NaNs throughout orders where telluric features have been masked out.  We choose to mask out tellurics rather than remove and re-inject these lines with a potentially flawed telluric model.  Introducing NaNs we believe to be preferable than potentially adding spurious features due to model inaccuracies, especially as such features could lead to systematics that are difficult to diagnose.
+                                        </p>
+
+                                        <p>
+                                            The requested detailed questions for each method will ask how this masking affects the performance of your method.  <b>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if the introduction of NaNs significantly hinders the implementation of your method. </b>
                                         </p>
                                         
-                                        <h4>Standardized Headers</h4>
+                                        <h4 id="spec_headers">Standardized Headers</h4>
 
                                         <p>
-                                            Provide some details on what headers we keep/redefine here.  Or maybe just a link to a relevant table.
+                                            Header keywords have been standardized across instruments (following the recommendations of <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13101/131011E/A-community-driven-modular-data-pipeline-architecture-to-push-EPRV/10.1117/12.3018595.full" target="blank">Burt et al. 2024</a>).  The included keywords and their counterparts in the original FITS files are listed in this <a href="documents/essp4_spec_headers.pdf" target="blank">table</a>.
+
+                                        <p>
+                                            <b>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if required header information for your method is not included in the standardized files.</b>
+                                        </p>
+                                        
+                                        <h4 id="expres_edges">EXPRES Order Edges</h4>
+
+                                        <p>
+                                            EXPRES order edges, especially in the blue, will exhibit NaNs and very low SNR values.
+                                        </p>
+
+                                        <p>
+                                            The extracted EXPRES spectra encompass the full detector, resulting in 7920 pixels in each order.  In practice, however, the signal drops off sharply at the edge of each order with the blaze function.  Pixels with too little signal to be extracted are replaced with NaNs.
+                                        </p>
+
+                                        <p>
+                                            Very low SNR extracted values will persist on the edges of EXPRES orders, especially in the blue.  This can result in noisy, even negative extracted values.  These noisy values are accompanied by corresponding large uncertainties, but we find that in practice it is easiest to implement an uncertainty cut on extracted values.  We recommend masking out all values with a large fractional uncertainty in addition to masking out the NaN values in each order.
                                         </p>
                                         
 									</section>
@@ -178,8 +257,82 @@
 											<h3>CCF</h3>
 										</header>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec
+											Standardized spectra have been run through the same CCF pipeline using the same CCF mask and sampled on the same velocity grid.  The resultant CCF files contain the following HDUs.  
 										</p>
+
+                                        <p>
+                                            We use N<sub>v</sub> to indicate the length of the velocity grid and N<sub>o</sub> to indicate the number of echelle orders.
+                                            <table class="bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th align="left"><b>Keyword</b></th>
+                                                        <th align="center" style='width:80px'><b>Shape</b></th>
+                                                        <th align="left"><b>Description</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>V_GRID</td>
+                                                        <td align="center">N<sub>v</sub></td>
+                                                        <td>Velocity grid in km/s for all CCFs in file</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CCF</td>
+                                                        <td align="center">N<sub>v</sub></td>
+                                                        <td>Global CCF value (i.e. averaged over all orders)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>E_CCF</td>
+                                                        <td align="center">N<sub>v</sub></td>
+                                                        <td>Global CCF errors</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ECHELLE_ORDERS</td>
+                                                        <td align="center">N<sub>o</sub></td>
+                                                        <td>Corresponding echelle order for each order-by-order (obo) entry</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OBO_CCF</td>
+                                                        <td align="center">N<sub>o</sub> x N<sub>v</sub></td>
+                                                        <td>Order-by-order CCFs</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OBO_E_CCF</td>
+                                                        <td align="center">N<sub>o</sub> x N<sub>v</sub></td>
+                                                        <td>Order-by-order CCF Errors</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OBO_CCF_RV</td>
+                                                        <td align="center">N<sub>o</sub></td>
+                                                        <td>Best-fit CCF RV (mean of a Gaussian fit) for each order in m/s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OBO_CCF_E_RV</td>
+                                                        <td align="center">N<sub>o</sub></td>
+                                                        <td>Standard deviation of the mean of the Gaussian fit to each order's CCF m/s</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </p>
+
+                                        <h4>Important to Note</h4>
+                                        
+                                        <ol>
+                                            <li>Some order specific CCFs will have only NaN values (<a href="#padded_orders">read more</a>)</li>
+                                            <li>The standard velocity grid oversamples HARPS and HARPS-N (<a href="#velocity_sampling">read more</a>)</li>
+                                            <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reachout</a> if any headers required by your method are missing.</li>
+                                        </ol>
+                                        
+                                        <h4 id="velocity_sampling">HARPS/HARPS-N Velocity Sampling</h4>
+
+                                        <p>
+                                            The provided standardized CCFs all share the same velocity grid with a spacing of 400 m/s, which oversamples the HARPS/HARPS-N pixel sampling.  For the HARPS/HARPS-N pipeline, a spacing of 820 m/s is used.
+                                        </p>
+
+                                        <p>
+                                            If your method does not require a uniform velocity grid across all instruments or treats each instrument separately, we recommend downsampling the velocity grid by half.  The provided <a href="#example_ccf">example code</a> contains a function that implements this.
+                                        </p>
+
 									</section>
                                 <hr />
                                     <section id="timeseries">
@@ -189,6 +342,87 @@
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec
                                         </p>
+
+                                        <p>
+                                            <table class="bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th align="left"><b>Column</b></th>
+                                                        <th align="left"><b>Description</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Standard File Name</td>
+                                                        <td>Name of associated standard spectrum file.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Time [eMJD]</td>
+                                                        <td>Photon weighted midpoint in eMJD (i.e. extra modified JD)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>RV [m/s]</td>
+                                                        <td>Radial velocity in m/s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>RV Err. [m/s]</td>
+                                                        <td>Radial velocity error in m/s (analytic, from CCF fit)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Exp. Time [s]</td>
+                                                        <td>Exposure time of observation in seconds</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Airmass</td>
+                                                        <td>Airmass of observation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>BERV [km/s]</td>
+                                                        <td>Barycentric velocity of observation in km/s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Instrument</td>
+                                                        <td>Source instrument for observation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CCF FWHM [km/s]</td>
+                                                        <td>FWHM of Gaussian fit to global CCF in km/s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CCF FWHM Err. [km/s]</td>
+                                                        <td>Standard deviation of the FWHM of the Gaussian fit to the global CCF in km/s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CCF Contrast</td>
+                                                        <td>Amplitude of Gaussian fit to the global CCF</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CCF Contrast Err.</td>
+                                                        <td>Standard deviation of the amplitude of the Gaussian fit to the global CCF</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>BIS [km/s]</td>
+                                                        <td>CCF bisector skew as defined in <a href="https://ui.adsabs.harvard.edu/abs/2001A%26A...379..279Q/abstract" target="blank">Queloz et al. 2001</a> in km/s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>H-alpha Emission</td>
+                                                        <td>Amplitude of Gaussian fit to H-alpha line in continuum normalized spectra</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>S Index</td>
+                                                        <td>Emission in core of Ca II HK lines</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            (The provided <a href="#example_timeseries">example code</a> includes a demonstration of how to rename the columns.)
+                                        </p>
+
+                                        <h4>Important to Note</h4>
+                                        
+                                        <ol>
+                                            <li>Time stamps (throughout all data products) feature an additional offset from their original time stamps.</li>
+                                            <li>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reachout</a> if any indicators required by your method are missing.</li>
+                                        </ol>
                                     </section>
 								</article>
 							</div>
