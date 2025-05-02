@@ -112,7 +112,7 @@
 										</p>
 
 										<p>
-											For any and all data issues, do not hesitate to reach out using the <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">feedback form</a> or e-mailing Lily (lilylingzhao[at]uchicago.edu) directly.
+											Do not hesitate to reach out with any questions using the <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">feedback form</a> or e-mailing lilylingzhao[at]uchicago.edu.
 										</p>
 
 										<p>
@@ -141,7 +141,7 @@
                                             </li>
                                         </ol>
                                         <p>
-                                            Please do not hesitate to <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if there is any additional code you would find helpful or examples in additional coding languages.
+                                            Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if there is any additional code you would find helpful or examples in additional coding languages.
                                         </p>
                                         
                                     </section>
@@ -200,28 +200,28 @@
                                         <ol>
                                             <li>Some orders will have only NaN values (<a href="#padded_orders">read more</a>)</li>
                                             <li>Redder orders will have NaNs sprinkled throughout where telluric lines have been masked (<a href="#telluric_masking">read more</a>)</li>
-                                            <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
+                                            <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing (<a href="#spec_headers">read more</a>)</li>
                                             <li>Masking may be required of the low SNR EXPRES order edges (<a href="#expres_edges">read more</a>)</li>
                                         </ol>
 
                                         <h4 id="padded_orders">Relative Orders Standardized to Echelle Order</h4>
 
                                         <p>
-                                            The orders have been re-organized such that the relative indexing of orders always maps to the same echelle order.  In other words, the first order in every standardized FITS file corresponds to echelle order 161.  Calling the Nth order of this standardized data will return an echelle order of a comparable wavelength regardless of the source instrument (e.g., H-alpha appears in the 68th entry of the standardized data for all instruments).
+                                            The orders have been re-organized such that the relative indexing of orders always maps to the same echelle order.  In other words, the first order in every standardized FITS file corresponds to echelle order 161.  Calling the Nth order of this standardized data will return an echelle order of a comparable wavelength regardless of the source instrument (e.g., H-alpha appears in the 69th entry of the standardized data for all instruments).
                                         </p>
 
                                         <p>
-                                            Data has been padded as necessary with NaNs.  For instance, NEID orders start at echelle order 161 while EXPRES orders start at echelle order 160.  Therefore, the first entry for every EXPRES file contains only NaNs.  Of particular note is that the HARPS data does not contain echelle order 115 (relative order 46 in the standardized data format).
+                                            Data has been padded as necessary with NaNs.  For instance, NEID orders start at echelle order 161 while EXPRES orders start at echelle order 160.  Therefore, the first entry for every EXPRES file contains only NaNs.  Of particular note is that the HARPS data does not contain echelle order 115 (relative order 47 in the standardized data format).
                                         </p>
 
                                         <p>
-                                            The provided <a href="#example_spectra">example code</a> includes a simple function that generates a mask that excludes orders that are all NaNs.
+                                            The provided <a href="#example_spectra">example code</a> includes a simple function to generate a mask that will exclude orders that are all NaNs.
                                         </p>
                                         
                                         <h4 id="telluric_masking">Telluric Masking</h4>
 
                                         <p>
-                                            In addition to the all NaN orders described above, there will also be NaNs throughout orders where telluric features have been masked out.  We choose to mask out tellurics rather than remove and re-inject these lines with a potentially flawed telluric model.  Introducing NaNs we believe to be preferable than potentially adding spurious features due to model inaccuracies, especially as such features could lead to systematics that are difficult to diagnose.
+                                            In addition to the all NaN orders described above, there will also be NaNs throughout orders where telluric features have been masked out.  We choose to mask out tellurics rather than remove and re-inject these lines with a potentially flawed telluric model.  We believe introducing NaNs is preferable to potentially adding spurious features due to model inaccuracies, especially as such features could lead to systematics that are difficult to diagnose.
                                         </p>
 
                                         <p>
@@ -248,7 +248,7 @@
                                         </p>
 
                                         <p>
-                                            Very low SNR extracted values will persist on the edges of EXPRES orders, especially in the blue.  This can result in noisy, even negative extracted values.  These noisy values are accompanied by corresponding large uncertainties, but we find that in practice it is easiest to implement an uncertainty cut on extracted values.  We recommend masking out all values with a large fractional uncertainty in addition to masking out the NaN values in each order.
+                                            Very low SNR extracted values will persist on the edges of EXPRES orders, especially in the blue.  This can result in noisy, even negative extracted values.  These noisy values are accompanied by corresponding large uncertainties, but we find that in practice it is easiest to implement an uncertainty cut on extracted values.  We recommend masking out all values with a large fractional uncertainty in addition to excluding the NaN values in each order.
                                         </p>
                                         
 									</section>
@@ -321,7 +321,7 @@
                                         <ol>
                                             <li>Some order specific CCFs will have only NaN values (<a href="#padded_orders">read more</a>)</li>
                                             <li>The standard velocity grid oversamples HARPS and HARPS-N (<a href="#velocity_sampling">read more</a>)</li>
-                                            <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
+                                            <li>Very few headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
                                         </ol>
                                         
                                         <h4 id="velocity_sampling">HARPS/HARPS-N Velocity Sampling</h4>
@@ -348,7 +348,7 @@
                                             <table class="bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th>Column</th>
+                                                        <th>Column Name</th>
                                                         <th>Description</th>
                                                     </tr>
                                                 </thead>
@@ -402,15 +402,15 @@
                                                         <td>Standard deviation of the amplitude of the Gaussian fit to the global CCF</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>BIS [km/s]</td>
+                                                        <td>BIS [m/s]</td>
                                                         <td>CCF bisector skew as defined in <a href="https://ui.adsabs.harvard.edu/abs/2001A%26A...379..279Q/abstract" target="blank">Queloz et al. 2001</a> in km/s</td>
                                                     </tr>
                                                     <tr>
                                                         <td>H-alpha Emission</td>
-                                                        <td>Amplitude of Gaussian fit to H-alpha line in continuum normalized spectra</td>
+                                                        <td>Minimum value in the H-alpha line with continuum normalized spectra</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>S Index</td>
+                                                        <td>CaII Emission</td>
                                                         <td>Emission in core of Ca II HK lines</td>
                                                     </tr>
                                                 </tbody>
@@ -421,9 +421,39 @@
                                         <h4>Important to Note</h4>
                                         
                                         <ol>
-                                            <li>Time stamps (throughout all data products) feature an additional offset from their original time stamps.</li>
+                                            <li>Time stamps (throughout all data products) feature an additional offset from their original time stamps</li>
+                                            <li>Some analytical errors for activity indicators are provided, but there is also the option to use empirical errors, described more below (<a href="#indicator_errors">read more</a>)</li>
+                                            <li>We suggest that derived indicators from each instrument be treated independently (<a href="#indicator_offsets">read more</a>)</li>
                                             <li>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any indicators required by your method are missing.</li>
                                         </ol>
+                                        
+                                        <h4 id="indicator_errors">Empirical Errors</h4>
+
+                                        <p>
+                                            The derived analytical errors appear to underestimate the error for CCF FWHM/Contrast and are not given for BIS, H-alpha emission, and CaII emission.  To derive an empirical error, we found the spread in indicator values across the full month of provided data.  This should be an appropriate error estimate as the Sun was relatively inactive during these observations.
+                                        </p>
+
+                                        <p>
+                                            We therefore suggest using the following empirical errors:
+                                        
+                                            <ul>
+                                                <li>CCF FWHM [km/s]: 0.005</li>
+                                                <li>CCF Contrast: </li>
+                                                <li>BIS [m/s]: 0.95</li>
+                                                <li>H-alpha Emission: 0.001</li>
+                                                <li>CaII Emission: 0.003</li>
+                                            </ul>
+                                        </p>
+
+                                        <h4 id="indicator_offsets">Indicator Offsets/Scaling</h4>
+
+                                        <p>
+                                            We suggest treating the indicators from each instrument independently.  It is obvious that at least an offset is needed between indicators from different instruments.  At this time, we are still working to establish whether a scaling will also be needed at the level of EPRV work.  For instance, CCF FWHM shows an obvious need for both an offset and scaling factor.
+                                        </p>
+
+                                        <p>
+                                            We therefore opt to present the indicators directly as they are derived from the spectra/CCFs, but advise that different model parameters will likely be needed for each instrument.
+                                        </p>
                                     </section>
 								</article>
 							</div>
