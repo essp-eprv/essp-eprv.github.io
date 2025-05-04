@@ -203,6 +203,7 @@
                                             <li>Redder orders will have NaNs sprinkled throughout where telluric lines have been masked (<a href="#telluric_masking">read more</a>)</li>
                                             <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing (<a href="#spec_headers">read more</a>)</li>
                                             <li>Masking may be required of the low SNR EXPRES order edges (<a href="#expres_edges">read more</a>)</li>
+                                            <li>Redder NEID orders (i.e. echelle orders greater than 69) are not included due to significant telluric contamination and low signal (<a href="#neid_red">read more</a>)</li>
                                         </ol>
 
                                         <h4 id="padded_orders">Relative Orders Standardized to Echelle Order</h4>
@@ -250,6 +251,12 @@
 
                                         <p>
                                             Very low SNR extracted values will persist on the edges of EXPRES orders, especially in the blue.  This can result in noisy, even negative extracted values.  These noisy values are accompanied by corresponding large uncertainties, but we find that in practice it is easiest to implement an uncertainty cut on extracted values.  We recommend masking out all values with a large fractional uncertainty in addition to excluding the NaN values in each order.
+                                        </p>
+                                        
+                                        <h4 id="neid_red">NEID Redder Orders</h4>
+
+                                        <p>
+                                            For the NEID data, we include only echelle orders 161-69, which spans approximately 3770 to 8968 A.  We believe spectra redder than echelle order 69 are not likely to be useful due to the significant telluric masking required in this region.  Over 50% of pixels in these orders are masked.  There are also few CCF lines for these orders (on the order of 5 per order).
                                         </p>
                                         
 									</section>
