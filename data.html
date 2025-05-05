@@ -109,11 +109,7 @@
 										</p>
 
 										<p>
-                                            We ask that all methods submit results using the provided standardized data products.  If you would also like to test your methods on custom generated data products, we ask that you submit those results <i>in addition to</i> results submitted using the standardized data products.
-										</p>
-
-										<p>
-											Do not hesitate to reach out with any questions using the <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">feedback form</a> or e-mailing lilylingzhao[at]uchicago.edu.
+                                            We ask that all methods submit results using the provided standardized data products.  If you would also like to test your methods on custom generated data products, plwease submit those results <i>in addition to</i> results using the standardized data products.
 										</p>
 
 										<p>
@@ -127,18 +123,25 @@
                                         </header>
                                         <ol>
                                             <li id="example_spectra">
-                                                ESSP IV standardized spectra<br>
-                                                <a href="documents/code/essp4_spec.ipynb" download>ipynb</a>
-                                                <!--<a href=""><span class="icon solid fa-terminal"></span></a>-->
-                                                <!--<a href=""><span class="icon solid fa-code" target="_blank"></span></a>-->
+                                                ESSP IV standardized spectra
+                                                <ul>
+                                                    <li><a href="documents/code/essp4_spec.py" download><span class="icon solid fa-code" target="_blank"></span></a> Python Script</li>
+                                                    <li><a href="documents/code/essp4_spec.ipynb" download><span class="icon solid fa-terminal"></span></a> Jupyter Notebook</li>
+                                                </ul>
                                             </li>
                                             <li id="example_ccf">
-                                                ESSP IV order-by-order and combined CCF<br>
-                                                <a href="documents/code/essp4_ccfs.ipynb" download>ipynb</a>
+                                                ESSP IV order-by-order and combined CCF
+                                                <ul>
+                                                    <li><a href="documents/code/essp4_ccfs.py" download><span class="icon solid fa-code" target="_blank"></span></a> Python Script</li>
+                                                    <li><a href="documents/code/essp4_ccfs.ipynb" download><span class="icon solid fa-terminal"></span></a> Jupyter Notebook</li>
+                                                </ul>
                                             </li>
                                             <li id="example_timeseries">
-                                                Time series of RVs/indicators<br>
-                                                <a href="documents/code/essp4_timeSeries.ipynb" download>ipynb</a>
+                                                Time series of RVs/indicators
+                                                <ul>
+                                                    <li><a href="documents/code/essp4_timeSeries.py" download><span class="icon solid fa-code" target="_blank"></span></a> Python Script</li>
+                                                    <li><a href="documents/code/essp4_timeSeries.ipynb" download><span class="icon solid fa-terminal"></span></a> Jupyter Notebook</li>
+                                                </ul>
                                             </li>
                                         </ol>
                                         <p>
@@ -182,7 +185,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>BLAZE</td>
-                                                    <td>Blaze model, the origin of which differs slightly for each instrument, but all can be used to remove the general blaze shape from the FLUX array</td>
+                                                    <td>Blaze model, which can be used to remove the general blaze shape from the FLUX array</td>
                                                 </tr>
                                                 <tr>
                                                     <td>COMMON_MASK</td>
@@ -200,8 +203,8 @@
                                         
                                         <ol>
                                             <li>Some orders will have only NaN values (<a href="#padded_orders">read more</a>)</li>
-                                            <li>Redder orders will have NaNs sprinkled throughout where telluric lines have been masked (<a href="#telluric_masking">read more</a>)</li>
-                                            <li>A subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing (<a href="#spec_headers">read more</a>)</li>
+                                            <li>Redder orders will have NaNs sprinkled throughout due to telluric masking (<a href="#telluric_masking">read more</a>)</li>
+                                            <li>A subset of headers have been included (<a href="#spec_headers">read more</a>); please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing</li>
                                             <li>Masking may be required of the low SNR EXPRES order edges (<a href="#expres_edges">read more</a>)</li>
                                             <li>Redder NEID orders (i.e. echelle orders greater than 69) are not included due to significant telluric contamination and low signal (<a href="#neid_red">read more</a>)</li>
                                         </ol>
@@ -209,7 +212,7 @@
                                         <h4 id="padded_orders">Relative Orders Standardized to Echelle Order</h4>
 
                                         <p>
-                                            The orders have been re-organized such that the relative indexing of orders always maps to the same echelle order.  In other words, the first order in every standardized FITS file corresponds to echelle order 161.  Calling the Nth order of this standardized data will return an echelle order of a comparable wavelength regardless of the source instrument (e.g., H-alpha appears in the 69th entry of the standardized data for all instruments).
+                                            The data within each file have been re-organized such that the relative indexing of orders always maps to the same echelle order.  In other words, the first order in every standardized FITS file corresponds to echelle order 161.  Calling the Nth order of this standardized data will return an echelle order of a comparable wavelength regardless of the source instrument (e.g., H-alpha appears in the 69th entry of the standardized data for all instruments).
                                         </p>
 
                                         <p>
@@ -256,14 +259,14 @@
                                         <h4 id="neid_red">NEID Redder Orders</h4>
 
                                         <p>
-                                            For the NEID data, we include only echelle orders 161-69, which spans approximately 3770 to 8968 A.  We believe spectra redder than echelle order 69 are not likely to be useful due to the significant telluric masking required in this region.  Over 50% of pixels in these orders are masked.  There are also few CCF lines for these orders (on the order of 5 per order).
+                                            For the NEID data, we include only echelle orders 161-69, which spans approximately 3770 to 8968 A.  Spectra redder than echelle order 69 are not likely to be useful due to the significant telluric masking required in this region.  Over 50% of pixels in these orders are masked.  There are also few CCF lines for these orders (on the order of 5 per order).
                                         </p>
                                         
 									</section>
 								<hr />
 									<section id="ccf">
 										<header>
-											<h3>CCF</h3>
+											<h3>CCFs</h3>
 										</header>
 										<p>
 											Standardized spectra have been run through the same CCF pipeline using the same CCF mask and sampled on the same velocity grid.  The CCF from each order is reweighted before being combined into a global CCF; the specific weighting is different for each instrument.  The resultant CCF files contain the following HDUs.  
@@ -288,7 +291,7 @@
                                                     <tr>
                                                         <td>CCF</td>
                                                         <td align="center">N<sub>v</sub></td>
-                                                        <td>Global CCF value (i.e. averaged over all orders)</td>
+                                                        <td>Global CCF value (i.e. all orders combined)</td>
                                                     </tr>
                                                     <tr>
                                                         <td>E_CCF</td>
@@ -328,7 +331,7 @@
                                         
                                         <ol>
                                             <li>Some order specific CCFs will have only NaN values (<a href="#padded_orders">read more</a>)</li>
-                                            <li>The standard velocity grid oversamples HARPS and HARPS-N (<a href="#velocity_sampling">read more</a>)</li>
+                                            <li>The standard velocity grid is oversampled for HARPS and HARPS-N (<a href="#velocity_sampling">read more</a>)</li>
                                             <li>Very few headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
                                         </ol>
                                         
