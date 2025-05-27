@@ -47,7 +47,7 @@ Please submit one set of answers for each method.  Some questions may not be rel
 (3) Applying the Method
 3.1.  What adjustments were required to implement this method on the provided solar data?  Were there any unexpected challenges?
 
-3.2.  What adjustments, if any, were required to implement this method on data from different instruments?
+3.2.  Was the method run on data from the different instruments together or separately?  Is there a reason for that choice?  What adjustments were required to implement this method on data from each instrument and/or on all instruments together?
 
 3.3.  What metric does the method use internally to decide if the method is performing better or worse?  (e.g. nightly RMS, specific likelihood function, etc.)
 
