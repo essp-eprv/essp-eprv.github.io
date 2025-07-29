@@ -39,6 +39,7 @@
 								<li><a href="data.html">Data</a>
 									<ul>
 										<li><a href="data.html#code">Example Code</a></li>
+										<li><a href="data.html#instruments">Instrument Properties</a></li>
 										<li><a href="data.html#spectra">Spectra</a></li>
 										<li><a href="data.html#ccf">CCFs</a></li>
 										<li><a href="data.html#timeseries">Time Series</a></li>
@@ -81,6 +82,12 @@
                             <hr />
                                 <section>
                                     <header>
+                                        <h3><a href="#instruments">Instrument Properties</a></h3>
+                                    </header>
+                                </section>
+							<hr />
+                                <section>
+                                    <header>
                                         <h3><a href="#spectra">Spectra</a></h3>
                                     </header>
                                 </section>
@@ -110,7 +117,7 @@
 										</p>
 
 										<p>
-                                            We ask that all methods submit results using the provided standardized data products.  If you would also like to test your methods on custom generated data products, plwease submit those results <i>in addition to</i> results using the standardized data products.
+                                            We ask that all methods submit results using the provided standardized data products.  If you would also like to test your methods on custom generated data products, please submit those results <i>in addition to</i> results using the standardized data products.
 										</p>
 
 										<p>
@@ -151,6 +158,27 @@
                                         </p>
                                         
                                     </section>
+								<hr />
+									<section id="instruments">
+										<header>
+											<h3>Instrument Properties</h3>
+										</header>
+
+										<p>
+                                            These data products are produced from solar observations taken by HARPS, HARPS-N, EXPRES, and NEID.  For more details about each instrument, please see Table 1/Section 2 of the <a href="https://ui.adsabs.harvard.edu/abs/2023AJ....166..173Z/abstract" target="blank">ESSP III</a> paper.
+										</p>
+
+										<h4>Intrinsic Offset</h4>
+
+										<p>
+                                            There is an intrinsic offset between the four instruments, meaning the spectral lines and CCFs from the different instruments will not exactly line up.  The HARPS and HARPS-N observations fall close to one another, and the EXPRES and NEID data fall close together.  These two groups, however, are separated by about 650 m/s.
+										</p>
+
+										<p>
+											If alignment is needed, a single global offset for each instrument is given <a href="documents/code/instrument_offsets.csv" target="blank">here</a>.  These offsets were derived by aligning binned CCF RVs from the full set of observations (i.e. as opposed to the subsets of data given in each released data set).  An example of how to read in these offsets and use them to align CCFs is given in the <a href="#example_ccf">example CCF code</a>.
+										</p>
+
+									</section>
 								<hr />
 									<section id="spectra">
 										<header>
@@ -208,7 +236,7 @@
                                             <li>Redder orders will have NaNs sprinkled throughout due to telluric masking (<a href="#telluric_masking">read more</a>)</li>
                                             <li>A subset of headers have been included (<a href="#spec_headers">read more</a>); please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing</li>
                                             <li>Masking may be required of the low SNR EXPRES order edges (<a href="#expres_edges">read more</a>)</li>
-                                            <li>Redder NEID orders (i.e. echelle orders greater than 69) are not included due to significant telluric contamination and low signal (<a href="#neid_red">read more</a>)</li>
+                                            <li>Redder NEID orders (i.e. echelle orders redder than 69) are not included due to significant telluric contamination and low signal (<a href="#neid_red">read more</a>)</li>
                                         </ol>
 
                                         <h4 id="padded_orders">Relative Orders Standardized to Echelle Order</h4>
@@ -218,7 +246,7 @@
                                         </p>
 
                                         <p>
-                                            Data has been padded as necessary with NaNs.  For instance, NEID orders start at echelle order 161 while EXPRES orders start at echelle order 160.  Therefore, the first entry for every EXPRES file contains only NaNs.  Of particular note is that the HARPS data does not contain echelle order 115 (relative order 47 in the standardized data format).
+                                            Data has been padded as necessary with NaNs.  For instance, NEID orders start at echelle order 161 while EXPRES orders start at echelle order 160.  Therefore, the first entry for every EXPRES-sourced ESSP file contains only NaNs.  Of particular note is that the HARPS data does not contain echelle order 115 (relative order 47 in the standardized data format).
                                         </p>
 
                                         <p>
@@ -251,7 +279,7 @@
                                         </p>
 
                                         <p>
-                                            The extracted EXPRES spectra encompass the full detector, resulting in 7920 pixels in each order.  In practice, however, the signal drops off sharply at the edge of each order with the blaze function.  Pixels with too little signal to be extracted are replaced with NaNs.
+                                            The extracted EXPRES spectra encompass the full detector, resulting in 7920 pixels in each order.  In practice, however, the signal drops off sharply at the edge of each order as expected due to the blaze response.  Pixels with too little signal to be extracted are replaced with NaNs.
                                         </p>
 
                                         <p>
@@ -264,6 +292,12 @@
                                             For the NEID data, we include only echelle orders 161-69, which spans approximately 3770 to 8968 A.  Spectra redder than echelle order 69 are not likely to be useful due to the significant telluric masking required in this region.  Over 50% of pixels in these orders are masked.  There are also few CCF lines for these orders (on the order of 5 per order).
                                         </p>
                                         
+                                        <h4 id="merged">Merged Spectra</h4>
+
+                                        <p>
+                                        	Spectra merged across orders is also available.  These files will have the same headers as the un-merged files as well as arrays for the merged wavelength, flux, and uncertainty (with the same keywords).
+                                        </p>
+                                        
 									</section>
 								<hr />
 									<section id="ccf">
@@ -271,7 +305,7 @@
 											<h3>CCFs</h3>
 										</header>
 										<p>
-											Standardized spectra have been run through the same CCF pipeline using the same CCF mask and sampled on the same velocity grid.  The CCF from each order is reweighted before being combined into a global CCF; the specific weighting is different for each instrument.  The resultant CCF files contain the following HDUs.  
+											Standardized spectra have been run through the same CCF pipeline, which makes use of the <a href="https://github.com/j-faria/iCCF" target="blank">iCCF</a> code.  All CCFs use the same line mask and are sampled on the same velocity grid.  The CCF from each order is reweighted before being combined into a global CCF; the <a href="https://github.com/lilylingzhao/ESSP4/blob/main/order_weights.csv" target="blank">specific weighting</a> is different for each instrument.  The resultant CCF files contain the following HDUs.  
 										</p>
 
                                         <p>
@@ -334,7 +368,8 @@
                                         <ol>
                                             <li>Some order specific CCFs will have only NaN values (<a href="#padded_orders">read more</a>)</li>
                                             <li>The standard velocity grid is oversampled for HARPS and HARPS-N (<a href="#velocity_sampling">read more</a>)</li>
-                                            <li>Very few headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
+                                            <li>Because of intrinsic instrument offsets, the CCFs from different instruments will be offset (see <a href="#instruments">discussion above</a>); the provided <a href="#example_ccf">example code</a> gives a function for aligning and re-interpolating the provided CCFs.</li>
+                                            <li>Only a subset of headers have been included; please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any headers required by your method are missing.</li>
                                         </ol>
                                         
                                         <h4 id="velocity_sampling">HARPS/HARPS-N Velocity Sampling</h4>
@@ -372,11 +407,11 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Time [eMJD]</td>
-                                                        <td>Photon weighted midpoint in eMJD (i.e. extra modified JD)</td>
+                                                        <td>Photon weighted midpoint in eMJD (i.e. extra modified JD, can be used like BJD)</td>
                                                     </tr>
                                                     <tr>
                                                         <td>RV [m/s]</td>
-                                                        <td>Radial velocity in m/s</td>
+                                                        <td>Zero-centered radial velocity in m/s</td>
                                                     </tr>
                                                     <tr>
                                                         <td>RV Err. [m/s]</td>
@@ -434,8 +469,9 @@
                                         <h4>Important to Note</h4>
                                         
                                         <ol>
-                                            <li>Time stamps (throughout all data products) feature an additional offset from their original time stamps</li>
-                                            <li>Some analytical errors for activity indicators are provided, but there is also the option to use empirical errors, described more below (<a href="#indicator_errors">read more</a>)</li>
+                                            <li>Time stamps (throughout all data products) feature an additional, random offset from their original time stamps (the "e" in "eMJD" is for <i>extra</i> modified JD)</li>
+                                            <li>The RVs in this table have been centered in order to align values from all four instruments (see <a href="#instruments">above</a>); these RVs will therefore differ from what is given in the headers of the individual CCF files.</li>
+                                            <li>Some analytical errors for activity indicators are provided, but there is also the option to use empirical errors (<a href="#indicator_errors">read more</a>)</li>
                                             <li>We suggest that derived indicators from each instrument be treated independently (<a href="#indicator_offsets">read more</a>)</li>
                                             <li>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any indicators required by your method are missing.</li>
                                         </ol>
@@ -443,7 +479,7 @@
                                         <h4 id="indicator_errors">Empirical Errors</h4>
 
                                         <p>
-                                            The derived analytical errors appear to underestimate the error for CCF FWHM/Contrast and are not given for BIS, H-alpha emission, and CaII emission.  To derive an empirical error, we found the spread in indicator values across the full month of provided data.  This should be an appropriate error estimate as the Sun was relatively inactive during these observations.
+                                            The derived analytical errors appear to underestimate the error for CCF FWHM/Contrast and are not given for BIS, H-alpha emission, and CaII emission.  To derive an empirical error, we found the spread in indicator values across all provided data.  This should be an appropriate error estimate as the Sun was relatively inactive during these observations.
                                         </p>
 
                                         <p>
