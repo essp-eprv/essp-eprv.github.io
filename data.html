@@ -122,7 +122,7 @@
 
 										<p>
 
-											<b>The data can be accessed via the following <a href="https://uchicago.box.com/s/1pf06c63jugjdkqnacc82b5s4auzc0a8" target="blank" style="color: #EAA422;">link</a>.</b>
+											<b>The data can be accessed via the following <a href="https://uchicago.box.com/s/1pf06c63jugjdkqnacc82b5s4auzc0a8" target="blank" style="color: #EAA422;">link</a>.  Updated October 8, 2025.</b>
 										</p>
 									</section>
                                 <hr />
@@ -176,6 +176,16 @@
 
 										<p>
 											If alignment is needed, a single global offset for each instrument is given <a href="documents/code/instrument_offsets_iccf.csv" target="blank">here</a>.  These offsets were derived by aligning binned CCF RVs from the full set of observations (i.e. as opposed to the subsets of data given in each released data set).  An example of how to read in these offsets and use them to align CCFs is given in the <a href="#example_ccf">example CCF code</a>.
+										</p>
+
+										<h4>Heliocentric Corrections</h4>
+
+										<p>
+                                            One of the benefits of Solar data is the ability to correct for the reflex motion of the Solar System planets.  For the ESSP data, these corrections are implemented on the wavelengths at the spectral level.   <b>The HARPS and HARPS-N data were not corrected in data downloaded before October 8, 2025.</b>
+										</p>
+
+										<p>
+											EXPRES and NEID use <a href="https://github.com/shbhuk/barycorrpy/wiki/09.-Barycentric-correction-for-Solar-System-RVs">barycorrpy</a> to shift wavelengths into the heliocentric frame.  Corrections for HARPS-N were obtained through DACE as prescribed by the <a href="https://dace.unige.ch/sun/pdf/README.pdf">read me</a>.  Corrections for HARPS were obtained through custom code that, like barycorrpy, uses the ephemeris from JPL Horizons.
 										</p>
 
 									</section>
@@ -473,13 +483,14 @@
                                             <li>The RVs in this table have been centered in order to align values from all four instruments (see <a href="#instruments">above</a>); these RVs will therefore differ from what is given in the headers of the individual CCF files.</li>
                                             <li>Some analytical errors for activity indicators are provided, but there is also the option to use empirical errors (<a href="#indicator_errors">read more</a>)</li>
                                             <li>We suggest that derived indicators from each instrument be treated independently (<a href="#indicator_offsets">read more</a>)</li>
+                                            <li>(Oct 8, 2025) The CCF FWHM and contrast have now been corrected for the apparent change in Solar vsini (<a href="#vsini">read more</a>)</li>
                                             <li>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzbYTv_394VuOWscJN49P2PijJJoBxLqXr6YGGZjbNMve_A/viewform?usp=sharing" target="blank">reach out</a> if any indicators required by your method are missing.</li>
                                         </ol>
                                         
                                         <h4 id="indicator_errors">Empirical Errors</h4>
 
                                         <p>
-                                            The derived analytical errors appear to underestimate the error for CCF FWHM/Contrast and are not given for BIS, H-alpha emission, and CaII emission.  To derive an empirical error, we found the spread in indicator values across all provided data.  This should be an appropriate error estimate as the Sun was relatively inactive during these observations.
+                                            The derived analytical errors appear to overestimate the error for CCF FWHM/Contrast and are not given for BIS, H-alpha emission, and CaII emission.  To derive an empirical error, we found the spread in indicator values across all provided data.  This should be an appropriate error estimate as the Sun was relatively inactive during these observations.
                                         </p>
 
                                         <p>
@@ -502,6 +513,25 @@
 
                                         <p>
                                             We therefore opt to present the indicators directly as they are derived from the spectra/CCFs, but advise that different model parameters will likely be needed for each instrument.
+                                        </p>
+
+                                        <h4 id="vsini">CCF FWHM/Contrast Corrections</h4>
+
+                                        <p>
+                                            The slight eccentricity of Earth’s orbit causes variations to the Sun’s vsini, requiring corrections to the measured CCF FWHM and contrast (see <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.1082C/abstract" target="blank">Collier Cameron et al. 2019</a>  Section 3).  <b>These corrections were not applied in data downloaded before October 8, 2025.</b>
+                                        </p>
+
+                                        <p>
+                                        	The columns “CCF FWHM [m/s]” and “CCF Contrast” in each DS#_timeSeries.csv file now contains the corrected values.  The uncorrected values are still include in columns that end in “Raw” (i.e. “CCF FWHM [km/s] Raw”).  The corrections that must be applied are given in column “CCF FWHM [km/s] Correction”
+                                        </p>
+
+                                        <p>
+                                        	If you choose to rederive your own CCF FWHM/contrast values, the corrections should be applied as follows:
+                                            <ul>
+                                                <li>"CCF FWHM [km/s]" = &#8730;("CCF FWHM [km/s] Raw"<sup>2</sup>+"CCF FWHM [km/s] Correction"<sup>2</sup>)</li>
+                                                <li>"CCF Contrast" = "CCF Contrast Raw" &times; "CCF FWHM [km/s] Raw" &divide; "CCF FWHM [km/s] "</li>
+                                            </ul>
+                                        	The provided <a href="#example_timeseries">example code</a> contains a cell that implements this.
                                         </p>
                                     </section>
 								</article>
@@ -561,6 +591,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 
 	</body>
 </html>
