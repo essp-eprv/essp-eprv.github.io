@@ -118,3 +118,9 @@ plt.xlabel('Time [eMJD]')
 plt.ylabel('RV [m/s]')
 plt.errorbar(data_dict['Time [eMJD]'],data_dict['RV [m/s]'],yerr=data_dict['RV Err. [m/s]'],
              linestyle='None',marker='o',color='k')
+
+# =============================================================================
+# Implement CCF FWHM and Contrast Corrections
+df = pd.read_csv(example_file)
+fwhm_corrected = np.sqrt(df['CCF FWHM [km/s] Raw']**2+df['CCF FWHM [km/s] Correction']**2)
+contrast_corrected = df['CCF Contrast'] * df['CCF FWHM [km/s] Raw'] / fwhm_corrected
