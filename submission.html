@@ -169,13 +169,13 @@
 											<tr>
 												<td>5</td>
 												<td><a href="#details">Method Details</a></td>
-												<td>Oct 15</td>
+												<td>Oct 31</td>
 												<td>&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;.<a href="documents/groupName_methodName.tex">tex</a>/<a href="documents/groupName_methodName.docx">docx</a>/<a href="documents/groupName_methodName.txt" target="_blank">txt</a></td>
 											</tr>
 											<tr>
 												<td>6</td>
 												<td><a href="#results">Results</a></td>
-												<td>Oct 15</td>
+												<td>Oct 31</td>
 												<td><a href="documents/examples/dataSet_groupName_methodName_results.csv"><span class="icon alt fa-file"></span></a> &lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_results.csv</td>
 											</tr>
 											<tr>
@@ -187,25 +187,25 @@
 											<tr>
 												<td>7a</td>
 												<td><a href="#planet">Planet Parameters</a></td>
-												<td>Oct 15</td>
+												<td>Oct 31</td>
 												<td><a href="documents/examples/dataSet_groupName_methodName_planetFit.csv"><span class="icon alt fa-file"></span></a> &lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFit.csv</td>
 											</tr>
 											<tr>
 												<td>7b</td>
 												<td><a href="#planet">Planet Fit Posteriors</a></td>
-												<td>Oct 15</td>
+												<td>Oct 31</td>
 												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_planetFitPosteriors.csv</td>
 											</tr>
 											<tr>
 												<td>8a</td>
 												<td><a href="#aux">Hyperparameters</a></td>
-												<td>Oct 15</td>
+												<td>Oct 31</td>
 												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparameters.csv</td>
 											</tr>
 											<tr>
 												<td>8b</td>
 												<td><a href="#aux">Hyperparameter Posteriors</a></td>
-												<td>Oct 15</td>
+												<td>Oct 31</td>
 												<td>&lt;&lt;Data Set&gt;&gt;_&lt;&lt;Group Name&gt;&gt;_&lt;&lt;Method Name&gt;&gt;_hyperparametersPosteriors.csv</td>
 											</tr>
 										</table>
@@ -444,10 +444,15 @@
 											For methods that derive any category of activity indicator, we ask that the value of the indicators be provided along with errors if possible.  Please be sure to specify the unit of the indicator in the column header if it exists.
 										</p>
 
-										<p>
-											Each file should contain a <b>Time [eMJD]</b> column that exactly mirrors the time stamps of the provided data set.  We ask that results are returned for every observation provided, even if there exists outliers.  Missing values should be left empty.  There is space to discuss missing data and outliers in the detailed questions document for each method.
-										</p>
+										<h6>File Details</h6>
 
+										<ul>
+											<li>Each file should contain a <b>Time [eMJD]</b> column that exactly mirrors the time stamps of the provided data set.</li>
+											<li>It would be helpful, though not necessary, to include "Standard File Name" as a column as well.</li>
+											<li>There should be a row for every observation provided, even if there exists outliers or missing values.</li>
+											<li>Observations across all four instruments should be combined into a single CSV file for each data set.</li>
+										</ul>
+										
 										<p>
 											The first row of an example submission would look as follows:
 											<table class="bordered">
